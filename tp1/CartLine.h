@@ -10,4 +10,5 @@ typedef struct cartLine CartLine;
 struct cartLine{
     char id[10];
     char product[15];
+    int amount;
 };

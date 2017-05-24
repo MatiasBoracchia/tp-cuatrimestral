@@ -7,11 +7,11 @@
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_ELECTRODOMESTIC_H
 
 typedef struct electrodomestic Electrodomestic;
-        struct electrodmoestic {
-            char name[15];
-            char model[15];
-            float price;
-        };
+struct electrodomestic {
+    char name[15];
+    char model[15];
+    float price;
+};
 
 void setPrice(Electrodomestic* electrodomestic , float newPrice);
 void print(Electrodomestic* electrodomestic);
