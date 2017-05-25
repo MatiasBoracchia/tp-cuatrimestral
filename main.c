@@ -10,4 +10,7 @@ int main() {
 
     printf("Electrodomestic\t Model \t\t Price \n");
     printf("%s \t %s \t %.2f \n", E.name, E.model, E.price);
+
+    setPrice(&E,6500);
+    printf("%s \t %s \t %.2f \n", E.name, E.model, E.price);
 }
