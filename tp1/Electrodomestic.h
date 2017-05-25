@@ -5,6 +5,7 @@
 #ifndef TP_CUATRIMESTRAL_INDIVIDUAL_ELECTRODOMESTIC_H
 #define TP_CUATRIMESTRAL_INDIVIDUAL_ELECTRODOMESTIC_H
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_ELECTRODOMESTIC_H
+#include <stdio.h>
 
 typedef struct electrodomestic Electrodomestic;
 struct electrodomestic {
@@ -14,5 +15,5 @@ struct electrodomestic {
 };
 
 void setPrice(Electrodomestic* electrodomestic , float newPrice);
-void print(Electrodomestic* electrodomestic);
+
 
