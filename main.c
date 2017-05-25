@@ -2,6 +2,7 @@
 #include <mem.h>
 #include "tp1/Electrodomestic.h"
 #include "tp1/Catalogue.h"
+#include "tp1/Provider.h"
 
 
 int main() {
@@ -18,6 +19,7 @@ int main() {
     setPrice(&E,6500.0);
     printf("%s \t %s \t %.2f \n", E.name, E.model, E.price);
 
+
     Catalogue C;
     strcpy(C.id,"12CWE345");
     strcpy(C.name,"Kitchen Products");
@@ -28,5 +30,25 @@ int main() {
     printf("The new price of %s with discunt %d is %.2f \n",E.name,C.discount,price);
 
 
+    Provider P;
+
+    strcpy(P.name,"Provider X2");
+    strcpy(P.city,"Chacarita");
+    strcpy(P.description,"Provider X2 is a company that specialices in...");
+    strcpy(P.location,"Buenos Aires");
+    strcpy(P.phoneNumber,"15-4140-1247");
+    strcpy(P.web,"www.providerx2.com");
+
+    receiveProduct(&P,&E);
+
+    for (int i = 0; i < 20 ; ++i) {
+        if (P.products[i]==){
+            break;
+        }
+        printf("Product Name: %s\n",P.products[i]);
+    }
+
     //----------TP2---------//
+
+
 }

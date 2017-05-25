@@ -17,6 +17,7 @@ struct catalogue{
 
 void setDiscount(Catalogue* catalogue, int discount);
 float calculatePriceWithDiscount(Catalogue* catalogue, Electrodomestic* electrodomestic);
+void addToCatalogue(Catalogue* catalogue, Electrodomestic* electrodomestic);
 
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_CATALOGUE_H
 

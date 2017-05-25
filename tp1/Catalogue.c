@@ -11,3 +11,6 @@ float calculatePriceWithDiscount(Catalogue* catalogue, Electrodomestic* electrod
     float discount = electrodomestic->price * (catalogue->discount / 100.0);
     return electrodomestic->price - discount;
 }
+void addToCatalogue(Catalogue* catalogue, Electrodomestic* electrodomestic){
+
+}
