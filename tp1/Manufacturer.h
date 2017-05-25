@@ -5,8 +5,6 @@
 #ifndef TP_CUATRIMESTRAL_INDIVIDUAL_MANUFACTURER_H
 #define TP_CUATRIMESTRAL_INDIVIDUAL_MANUFACTURER_H
 
-#endif //TP_CUATRIMESTRAL_INDIVIDUAL_MANUFACTURER_H
-
 typedef struct manufacturer Manufacturer;
 
 struct manufacturer{
@@ -17,3 +15,5 @@ struct manufacturer{
     char phoneNumber[15];
     char web[40];
 };
+
+#endif //TP_CUATRIMESTRAL_INDIVIDUAL_MANUFACTURER_H

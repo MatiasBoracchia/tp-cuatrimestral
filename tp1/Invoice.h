@@ -5,10 +5,12 @@
 #ifndef TP_CUATRIMESTRAL_INDIVIDUAL_INVOICE_H
 #define TP_CUATRIMESTRAL_INDIVIDUAL_INVOICE_H
 
-#endif //TP_CUATRIMESTRAL_INDIVIDUAL_INVOICE_H
-
 typedef struct invoice Invoice;
 struct invoice{
     char id[10];
     float futurePayment;
 };
+
+#endif //TP_CUATRIMESTRAL_INDIVIDUAL_INVOICE_H
+
+
