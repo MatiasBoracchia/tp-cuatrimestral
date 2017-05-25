@@ -4,12 +4,13 @@
 
 #ifndef TP_CUATRIMESTRAL_INDIVIDUAL_LOAN_H
 #define TP_CUATRIMESTRAL_INDIVIDUAL_LOAN_H
-typedef struct loan{
+typedef struct loan Loan;
+struct loan{
     double charge;
     char code[10];
     char exitDate[10];
     int daysKept;
-}Loan;
+};
 
 double charge(Loan* loan);
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_LOAN_H
