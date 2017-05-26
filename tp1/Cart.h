@@ -2,12 +2,12 @@
 // Created by Usuario on 24-May-17.
 //
 
-#include "CartLine.h"
-#include "Invoice.h"
+
 
 #ifndef TP_CUATRIMESTRAL_INDIVIDUAL_CART_H
 #define TP_CUATRIMESTRAL_INDIVIDUAL_CART_H
-
+#include "CartLine.h"
+#include "Invoice.h"
 typedef struct cart Cart;
 struct cart{
     char id[10];

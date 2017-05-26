@@ -2,9 +2,12 @@
 // Created by Usuario on 25-May-17.
 //
 
-#include "Person.h"
 #include "Loan.c"
+#include "Material.h"
+#include "Person.h"
 
+#include <stdio.h>
+#include <stdlib.h>
 void takeMaterial(Person* person, Material* material, Loan* loan, char date[10]){
     int aux = person->numberOfBooks;
     aux++;

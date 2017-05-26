@@ -2,11 +2,11 @@
 // Created by Usuario on 24-May-17.
 //
 
-#include "Electrodomestic.h"
+
 
 #ifndef TP_CUATRIMESTRAL_INDIVIDUAL_MANUFACTURER_H
 #define TP_CUATRIMESTRAL_INDIVIDUAL_MANUFACTURER_H
-
+#include "Electrodomestic.h"
 typedef struct manufacturer Manufacturer;
 
 struct manufacturer{

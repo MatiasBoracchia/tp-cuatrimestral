@@ -2,13 +2,11 @@
 // Created by Usuario on 24-May-17.
 //
 
-#include "Electrodomestic.h"
+
 
 #ifndef TP_CUATRIMESTRAL_INDIVIDUAL_PROVIDER_H
 #define TP_CUATRIMESTRAL_INDIVIDUAL_PROVIDER_H
-
-#endif //TP_CUATRIMESTRAL_INDIVIDUAL_PROVIDER_H
-
+#include "Electrodomestic.h"
 typedef struct provider Provider;
 struct provider{
     char name[15];
@@ -23,4 +21,8 @@ struct provider{
 
 void receiveProduct(Provider* provider, Electrodomestic* electrodomestic);
 void providesProduct(Provider* provider, Electrodomestic* electrodomestic);
+#endif //TP_CUATRIMESTRAL_INDIVIDUAL_PROVIDER_H
+
+
+
 

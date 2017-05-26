@@ -5,11 +5,16 @@
 #ifndef TP_CUATRIMESTRAL_INDIVIDUAL_LIBRARY_H
 #define TP_CUATRIMESTRAL_INDIVIDUAL_LIBRARY_H
 #include "Material.h"
-
+#include "Person.h"
+#include <stdio.h>
+#include <stdlib.h>
 typedef struct library Library;
 struct library{
-    Material material[];
-    Person person[];
+    Material material[50];
+    Person person[100];
+    int numberOfMaterial;
+    int numberOfPeople;
+
 };
 
 void addPerson(Library* library, Person* person);

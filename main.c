@@ -1,11 +1,16 @@
 #include <stdio.h>
 #include <mem.h>
+
+
 #include "tp1/Electrodomestic.h"
 #include "tp1/Catalogue.h"
 #include "tp1/Provider.h"
-#include "tp3/Material.h"
-#include "tp3/Person.c"
+#include "tp3/Library.h"
 
+#include "tp3/Person.h"
+
+#include "tp4/Recepcionist.c"
+#include "tp4/Client.c"
 int main() {
     //----------TP1---------//
 
@@ -80,10 +85,40 @@ int main() {
 
 
 
+   // takeMaterial(&person, &material, &loan1, "23/5/2017");   //NO ME TOMA LAS FUNCIONES HELP
+  //  returnMaterial(&person, &material, &loan1, 2);   // IDEM
 
-    takeMaterial(&person, &material, &loan1, "23/5/2017");   //NO ME TOMA LAS FUNCIONES HELP
-    returnMaterial(&person, &material, &loan1, 2);
+    printf("The %s debt is: %.2f \n", person.type, person.debt);
 
-    printf("The %s debt is: %.2f", person.type, person.debt);
+    Library library;
+    library.numberOfPeople = 0;
+    library.numberOfMaterial = 0;
+
+   // addMaterial(&library,&material); //IDEM
+
+    printf("The amount of books in the library is: %d \n",library.numberOfMaterial);
+
+
+    //-------------TP4----------//
+    Room room;
+    room.numberOfRoom = 12;
+    strcpy(room.status, "Reserved");
+    strcpy(room.typeOfRoom, "Normal");
+
+    Recepcionist recepcionist;
+    strcpy(recepcionist.name,"Juana");
+    strcpy(recepcionist.surname,"Rios");
+    recepcionist.id = 444;
+    recepcionist.rooms[0] = room;
+    recepcionist.amountOfRooms = 1;
+    giveInformation(&recepcionist);
+
+    Client client;
+    client.id = 1230;
+    strcpy(client.name, "Lorenzo");
+    strcpy(client.surname, "Rojas");
+
+
+    makeReservation(&client,&room);
     return 0;
 }

@@ -1,7 +1,7 @@
 //
 // Created by Usuario on 25-May-17.
 //
-
+#include <stdio.h>
 #include "Provider.h"
 
 void receiveProduct(Provider* provider, Electrodomestic* electrodomestic){
