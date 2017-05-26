@@ -3,12 +3,12 @@
 //
 #include "Material.h"
 #include "Loan.h"
-
+#include <stdio.h>
 #ifndef TP_CUATRIMESTRAL_INDIVIDUAL_PERSON_H
 #define TP_CUATRIMESTRAL_INDIVIDUAL_PERSON_H
 typedef struct person Person;
 
-    struct person{
+struct person{
     char type[10];
     char name[20];
     char surname[20];
@@ -18,17 +18,8 @@ typedef struct person Person;
     double debt;
 };
 
-/*typedef struct student{
-    Person person;
-    int enrollmente;
-}Student;
-
-typedef struct professor{
-    Person person;
-    int employmeeNumber;
-}Professor;*/
-
 void takeMaterial(Person* person, Material* material, Loan* loan, char date[10]);
 void returnMaterial(Person* person, Material* material, Loan* loan, int daysKept);
 
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_PERSON_H
+

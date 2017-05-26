@@ -4,7 +4,7 @@
 #include "tp1/Catalogue.h"
 #include "tp1/Provider.h"
 #include "tp3/Material.h"
-#include "tp3/Person.h"
+#include "tp3/Person.c"
 
 int main() {
     //----------TP1---------//
@@ -78,9 +78,12 @@ int main() {
     strcpy(loan1.exitDate, "");
     loan1.charge = 10.0;
 
-    //takeMaterial(&person, &material, &loan1, "23/5/2017");      //NO ME TOMA LAS FUNCIONES HELP
-    //returnMaterial(&person, &material, &loan1, 2);
 
-    printf("The %s debt is: %d", person.type, person.debt);
 
+
+    takeMaterial(&person, &material, &loan1, "23/5/2017");   //NO ME TOMA LAS FUNCIONES HELP
+    returnMaterial(&person, &material, &loan1, 2);
+
+    printf("The %s debt is: %.2f", person.type, person.debt);
+    return 0;
 }
