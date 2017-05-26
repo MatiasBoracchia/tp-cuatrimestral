@@ -8,8 +8,9 @@ void makeReservation(Client* client, Room* room){
     if(room->status == "Available"){
         strcpy(room->status, "reserved");
     }else{
-        printf("The room: %d is %s",room->numberOfRoom, room->status);
+        printf("The room: %d is %s \n",room->numberOfRoom, room->status);
+        return;
     }
 
-
+    return;
 }

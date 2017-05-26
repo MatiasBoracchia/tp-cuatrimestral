@@ -11,6 +11,9 @@
 
 #include "tp4/Recepcionist.c"
 #include "tp4/Client.c"
+#include "tp4/Invoice.c"
+
+
 int main() {
     //----------TP1---------//
 
@@ -109,7 +112,7 @@ int main() {
     strcpy(recepcionist.name,"Juana");
     strcpy(recepcionist.surname,"Rios");
     recepcionist.id = 444;
-    recepcionist.rooms[0] = room;
+    recepcionist.rooms[0] = &room;
     recepcionist.amountOfRooms = 1;
     giveInformation(&recepcionist);
 
@@ -120,5 +123,13 @@ int main() {
 
 
     makeReservation(&client,&room);
+
+    Invoice invoice1;
+    invoice1.id = 898;
+    strcpy(invoice1.hotelName, "Paquitos");
+
+    payForRoom(&invoice1,&client,&room);
+    printf("Invoice: %d \t %s \t %s \n",invoice1.id,invoice1.clientName,room.status);
+    giveInformation(&recepcionist);
     return 0;
 }

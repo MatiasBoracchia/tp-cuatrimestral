@@ -10,7 +10,7 @@ typedef struct recepcionist Recepcionist;
 struct recepcionist{
     char name[15];
     char surname[15];
-    Room rooms[20];
+    Room* rooms[20];
     int id;
     int amountOfRooms;
 };
