@@ -18,6 +18,12 @@
 #include "tp4/Invoice.c"
 
 
+#include "tp5/Administrator.c"
+#include "tp5/Customer.h"
+#include "tp5/License.h"
+#include "tp5/Rent.h"
+#include "tp5/Surplus.h"
+
 int main() {
     //----------TP1---------//
     printf("//----------TP1---------//\n");
@@ -91,24 +97,28 @@ int main() {
     loan1.charge = 10.0;
 
 
+    Library library;
+    library.numberOfPeople = 0;
+    library.numberOfMaterial = 0;
 
     takeMaterial(&person, &material, &loan1, "23/5/2017");
     returnMaterial(&person, &material, &loan1, 2);
 
     printf("The %s debt is: %.2f \n", person.type, person.debt);
 
-    Library library;
-    library.numberOfPeople = 0;
-    library.numberOfMaterial = 0;
 
     addMaterial(&library,&material);
     addPerson(&library,&person);
     printf("The amount of books in the library is: %d \n",library.numberOfMaterial);
     printf("The amount of people in the library is: %d  \n",library.numberOfPeople);
 
+
+
     for (int i = 0; i < library.numberOfMaterial; ++i) {
         printf("Info of material: %s,%s \n ",library.material[i]->title,library.material[i]->status);
     }
+
+
 
     //-------------TP4----------//
     printf("//----------TP4---------//\n");
@@ -140,5 +150,39 @@ int main() {
     payForRoom(&invoice1,&client,&room);
     printf("Invoice: %d \t %s \t %s \n",invoice1.id,invoice1.clientName,room.status);
     giveInformation(&recepcionist);
+
+    //-------------TP5----------//
+    printf("//----------TP5---------//\n");
+    License license1;
+    license1.licenseId = 4444;
+
+    Customer customer;
+    customer.id = 47897;
+    strcpy(customer.name, "Francisco");
+    strcpy(customer.surname, "Garcia");
+
+
+    Administrator admin;
+    admin.amountOfCustomers = 0;
+    strcpy(admin.name, "Esteban");
+    strcpy(admin.surname, "Lauri");
+    admin.id = 12345;
+
+    registerCustomer(&admin,&customer);
+
+    printf("amout of clients: %d \n",admin.amountOfCustomers);
+    printf("Name of Customer in admin: %s \n",admin.customer[0]->name);
+
+
+
+
+
+
+
+
+
+
+
+
     return 0;
 }

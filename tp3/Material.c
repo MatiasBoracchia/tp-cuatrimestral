@@ -7,3 +7,6 @@
 void replaceMaterial(Material* material, Material* newMaterial){
     material = newMaterial;
 }
+void deleteMaterial(Material* material){
+    free(material);
+}
