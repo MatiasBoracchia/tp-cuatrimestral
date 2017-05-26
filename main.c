@@ -5,9 +5,13 @@
 #include "tp1/Electrodomestic.h"
 #include "tp1/Catalogue.h"
 #include "tp1/Provider.h"
-#include "tp3/Library.h"
 
-#include "tp3/Person.h"
+
+#include "tp3/Library.c"
+#include "tp3/Person.c"
+#include "tp3/Loan.c"
+#include "tp3/Material.c"
+
 
 #include "tp4/Recepcionist.c"
 #include "tp4/Client.c"
@@ -16,7 +20,7 @@
 
 int main() {
     //----------TP1---------//
-
+    printf("//----------TP1---------//\n");
     Electrodomestic E;
     strcpy(E.name,"Microwave");
     strcpy(E.model,"Samsung hx3");
@@ -61,7 +65,7 @@ int main() {
 
 
     //----------TP3---------//
-
+    printf("//----------TP3---------//\n");
 
     Material material;
     strcpy(material.author,"Perez");
@@ -88,8 +92,8 @@ int main() {
 
 
 
-   // takeMaterial(&person, &material, &loan1, "23/5/2017");   //NO ME TOMA LAS FUNCIONES HELP
-  //  returnMaterial(&person, &material, &loan1, 2);   // IDEM
+    takeMaterial(&person, &material, &loan1, "23/5/2017");
+    returnMaterial(&person, &material, &loan1, 2);
 
     printf("The %s debt is: %.2f \n", person.type, person.debt);
 
@@ -97,12 +101,17 @@ int main() {
     library.numberOfPeople = 0;
     library.numberOfMaterial = 0;
 
-   // addMaterial(&library,&material); //IDEM
-
+    addMaterial(&library,&material);
+    addPerson(&library,&person);
     printf("The amount of books in the library is: %d \n",library.numberOfMaterial);
+    printf("The amount of people in the library is: %d  \n",library.numberOfPeople);
 
+    for (int i = 0; i < library.numberOfMaterial; ++i) {
+        printf("Info of material: %s,%s \n ",library.material[i]->title,library.material[i]->status);
+    }
 
     //-------------TP4----------//
+    printf("//----------TP4---------//\n");
     Room room;
     room.numberOfRoom = 12;
     strcpy(room.status, "Reserved");

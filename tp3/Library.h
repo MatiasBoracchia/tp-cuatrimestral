@@ -10,8 +10,8 @@
 #include <stdlib.h>
 typedef struct library Library;
 struct library{
-    Material material[50];
-    Person person[100];
+    Material* material[50];
+    Person* person[100];
     int numberOfMaterial;
     int numberOfPeople;
 

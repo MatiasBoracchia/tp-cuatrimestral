@@ -6,8 +6,6 @@
 #define TP_CUATRIMESTRAL_INDIVIDUAL_PERSON_H
 #include "Loan.h"
 #include "Material.h"
-#include <stdio.h>
-#include <stdlib.h>
 typedef struct person Person;
 
 struct person{

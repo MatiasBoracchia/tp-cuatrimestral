@@ -4,8 +4,7 @@
 
 #ifndef TP_CUATRIMESTRAL_INDIVIDUAL_MATERIAL_H
 #define TP_CUATRIMESTRAL_INDIVIDUAL_MATERIAL_H
-#include <stdio.h>
-#include <stdlib.h>
+
 typedef struct material Material;
 struct material{
     char type[20];

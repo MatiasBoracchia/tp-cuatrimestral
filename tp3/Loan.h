@@ -4,8 +4,7 @@
 
 #ifndef TP_CUATRIMESTRAL_INDIVIDUAL_LOAN_H
 #define TP_CUATRIMESTRAL_INDIVIDUAL_LOAN_H
-#include <stdio.h>
-#include <stdlib.h>
+
 typedef struct loan Loan;
 struct loan{
     double charge;

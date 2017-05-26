@@ -2,8 +2,7 @@
 // Created by Usuario on 25-May-17.
 //
 
-#include "Loan.c"
-#include "Material.h"
+
 #include "Person.h"
 
 #include <stdio.h>
