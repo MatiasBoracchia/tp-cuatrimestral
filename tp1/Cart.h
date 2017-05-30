@@ -10,14 +10,14 @@
 #include "Invoice.h"
 typedef struct cart Cart;
 struct cart{
-    char id[10];
+    char* id;
     float total;
     CartLine products[20]; //max is 20
 };
 
 float calculateTotal(Cart* cart);
 Invoice* generateInvoice(Cart* cart);
-
+Cart* createCart(char* id, float total);
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_CART_H
 
 

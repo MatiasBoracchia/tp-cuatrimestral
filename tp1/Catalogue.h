@@ -9,15 +9,17 @@
 #include "Electrodomestic.h"
 typedef struct catalogue Catalogue;
 struct catalogue{
-    char id[10];
-    char name[20];
+    char* id;
+    char* name;
     int discount;
-    Electrodomestic products[20];
+    Electrodomestic** products;
+    int amountOfElectrodomestics;
+    int maxAmountOfElectrodomestics;
 };
-
+Catalogue* careateCatalogue(char* id, char* name,int discount, Electrodomestic** products,int maxAmountOfElectrodomestics);
 void setDiscount(Catalogue* catalogue, int discount);
-float calculatePriceWithDiscount(Catalogue* catalogue, Electrodomestic* electrodomestic);
-void addToCatalogue(Catalogue* catalogue, Electrodomestic* electrodomestic);
+float calculatePriceWithDiscount(Catalogue* catalogue, Electrodomestic** electrodomestic);
+void addToCatalogue(Catalogue* catalogue, Electrodomestic** electrodomestic);
 
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_CATALOGUE_H
 
