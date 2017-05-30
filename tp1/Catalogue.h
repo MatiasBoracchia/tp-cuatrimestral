@@ -16,10 +16,10 @@ struct catalogue{
     int amountOfElectrodomestics;
     int maxAmountOfElectrodomestics;
 };
-Catalogue* careateCatalogue(char* id, char* name,int discount, Electrodomestic** products,int maxAmountOfElectrodomestics);
+Catalogue* careateCatalogue(char* id, char* name,int discount,int maxAmountOfElectrodomestics);
 void setDiscount(Catalogue* catalogue, int discount);
-float calculatePriceWithDiscount(Catalogue* catalogue, Electrodomestic** electrodomestic);
-void addToCatalogue(Catalogue* catalogue, Electrodomestic** electrodomestic);
+float calculatePriceWithDiscount(Catalogue* catalogue, Electrodomestic* electrodomestic);
+void addToCatalogue(Catalogue* catalogue, Electrodomestic* electrodomestic);
 
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_CATALOGUE_H
 

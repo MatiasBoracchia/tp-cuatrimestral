@@ -12,12 +12,12 @@ typedef struct cart Cart;
 struct cart{
     char* id;
     float total;
-    CartLine** products;
+    //CartLine** products;
 };
 
 float calculateTotal(Cart* cart);
 Invoice* generateInvoice(Cart* cart);
-Cart* createCart(char* id, float total, CartLine** products);
+Cart* createCart(char* id, float total);
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_CART_H
 
 
