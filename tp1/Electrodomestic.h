@@ -9,12 +9,12 @@
 
 typedef struct electrodomestic Electrodomestic;
 struct electrodomestic {
-    char name[15];
-    char model[15];
+    char* name;
+    char* model;
     float price;
-    Manufacturer manufacturer1;
+    Manufacturer* manufacturer;
 };
-
+Electrodomestic* createElectrodomestic(char* name, char* model, float price, Manufacturer* manufacturer);
 void setPrice(Electrodomestic* electrodomestic , float newPrice);
 
 

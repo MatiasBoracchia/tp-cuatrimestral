@@ -6,8 +6,8 @@
 #define TP_CUATRIMESTRAL_INDIVIDUAL_LABEL_H
 typedef struct label Label;
 struct label{
-    char id[10];
-    char name[15];
+    char* id;
+    char* name;
 };
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_LABEL_H
 

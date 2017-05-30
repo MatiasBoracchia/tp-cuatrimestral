@@ -9,31 +9,21 @@
 typedef struct person Person;
 
 struct person{
-    char type[10];
-    char name[20];
-    char surname[20];
-    char mail[30];
-    char telephone[15];
+    char* type;
+    char* name;
+    char* surname;
+    char* mail;
+    char * telephone;
     int numberOfBooks;
     double debt;
 };
 
-typedef struct student Student;
-
-struct student{
-    Person person;
-    int id;
-};
-
-typedef struct professor Professor;
-
-struct professor{
-    Person person;
-    int employeeNumber;
-};
 
 
-void takeMaterial(Person* person, Material* material, Loan* loan, char date[10]);
+
+
+
+void takeMaterial(Person* person, Material* material, Loan* loan, char* date);
 void returnMaterial(Person* person, Material* material, Loan* loan, int daysKept);
 
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_PERSON_H

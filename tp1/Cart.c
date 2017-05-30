@@ -4,7 +4,7 @@
 
 #include "Cart.h"
 
-Cart* createCart(char* id, float total){
+Cart* createCart(char* id, float total, CartLine** products ){
     Cart* result= malloc(sizeof(Cart));
 
     result->id=id;

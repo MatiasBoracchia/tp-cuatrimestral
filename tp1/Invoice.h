@@ -7,10 +7,11 @@
 
 typedef struct invoice Invoice;
 struct invoice{
-    char id[10];
+    char* id;
     float futurePayment;
 };
 
+Invoice* createInvoice(char* id, float futurePayment);
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_INVOICE_H
 
 

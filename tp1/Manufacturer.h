@@ -10,13 +10,13 @@
 typedef struct manufacturer Manufacturer;
 
 struct manufacturer{
-    char name[10];
-    char description[140];
-    char location[30];
-    char city[20];
-    char phoneNumber[15];
-    char web[40];
+    char* name;
+    char* description;
+    char* location;
+    char* city;
+    char* phoneNumber;
+    char* web;
 };
 
-
+Manufacturer* createManufacturer(char* name, char* description, char* location, char* city, char* phoneNumber, char* web);
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_MANUFACTURER_H

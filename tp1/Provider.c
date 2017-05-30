@@ -1,7 +1,6 @@
 //
 // Created by Usuario on 25-May-17.
 //
-#include <stdio.h>
 #include "Provider.h"
 
 void receiveProduct(Provider* provider, Electrodomestic* electrodomestic){
@@ -21,4 +20,16 @@ void providesProduct(Provider* provider, Electrodomestic* electrodomestic){
         }
     }
     return;
+}
+
+Provider* createProvider(char* name, char* description, char* location, char* city, char* phoneNumber, char* web, Electrodomestic** products){
+    Provider* provider = malloc(sizeof(Provider));
+    provider->web = web;
+    provider->phoneNumber = phoneNumber;
+    provider->location = location;
+    provider->name = name;
+    provider->city = city;
+    provider->description =description;
+
+    //falta products
 }

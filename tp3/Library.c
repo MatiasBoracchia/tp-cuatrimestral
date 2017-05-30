@@ -19,3 +19,10 @@ void addMaterial(Library* library, Material* material){
         library->numberOfMaterial = library->numberOfMaterial +1;
     }
 }
+
+Library* createLibrary(Material** material, Person** person, int numberOfMaterials, int numberOfPeople){
+    Library* library = malloc(sizeof(Library));
+    library->numberOfMaterials = numberOfMaterials;
+    library->numberOfPeople = numberOfPeople;
+    //faltan los dos ARRAYS
+}

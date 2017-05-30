@@ -10,14 +10,14 @@
 #include <stdlib.h>
 typedef struct library Library;
 struct library{
-    Material* material[50];
-    Person* person[100];
-    int numberOfMaterial;
+    Material** material;
+    Person** person;
+    int numberOfMaterials;
     int numberOfPeople;
 
 };
-
-void addPerson(Library* library, Person* person);
-void addMaterial(Library* library, Material* material);
+Library* createLibrary(Material** material, Person** person, int numberOfMaterials, int numberOfPeople);
+void addPerson(Library* library, Person** person);
+void addMaterial(Library* library, Material** material);
 
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_LIBRARY_H

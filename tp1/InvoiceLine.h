@@ -6,8 +6,8 @@
 #define TP_CUATRIMESTRAL_INDIVIDUAL_INVOICELINE_H
 typedef struct invoiceLine InvoiceLine;
 struct invoiceLine{
-    char id[10];
-    char product[15];
+    char* id;
+    char* product;
     int amount;
 };
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_INVOICELINE_H

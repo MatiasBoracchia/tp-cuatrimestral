@@ -7,22 +7,15 @@
 
 typedef struct material Material;
 struct material{
-    char type[20];
-    char code[10];
-    char author[20];
-    char title[20];
+    char* type;
+    char* code;
+    char* author;
+    char* title;
+    char* status;
     int year;
-    char status[10];
 };
+//o creo un book o una magazine no un material
 
-struct book{
-    Material material;
-    char publisher[20];
-};
-
-struct magazine{
-    Material material;
-};
 void deleteMaterial(Material* material);
 void replaceMaterial(Material* material, Material* newMaterial);
 
