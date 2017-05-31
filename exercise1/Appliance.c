@@ -1,17 +1,15 @@
 //
 // Created by Franco on 25-May-17.
 //
-#include "Electrodomestic.h"
-#include <libintl.h>
+#include "Appliance.h"
 #include <stdio.h>
-#include <malloc.h>
 
-void setPrice(Electrodomestic* electrodomestic , float newPrice){
+void setPrice(Appliance* electrodomestic , float newPrice){
     electrodomestic->price = newPrice;
 }
 
-Electrodomestic* createElectrodomestic(char* name, char* model, float price, Manufacturer* manufacturer){
-    Electrodomestic* electrodomestic = malloc(sizeof(Electrodomestic));
+Appliance* createElectrodomestic(char* name, char* model, float price, Manufacturer* manufacturer){
+    Appliance* electrodomestic = malloc(sizeof(Appliance));
     electrodomestic->name = name;
     electrodomestic->model = model;
     electrodomestic->price = price;

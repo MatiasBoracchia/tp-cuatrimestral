@@ -2,7 +2,7 @@
 #include <mem.h>
 
 
-#include "tp1/Electrodomestic.h"
+#include "tp1/Appliance.h"
 #include "tp1/Catalogue.h"
 #include "tp1/Manufacturer.c"
 #include "tp1/Provider.c"
@@ -30,9 +30,9 @@ int main() {
     printf("//----------TP1---------//\n");
 
     Manufacturer* manufacturer1 = createManufacturer("S-R","We worken","Buenos Aires","Bahia Blanca","15-3142-5967","www.s-r.come");
-    Electrodomestic* E = createElectrodomestic("Microwave","Samsung hx3",7100.0,manufacturer1);
+    Appliance* E = createElectrodomestic("Microwave","Samsung hx3",7100.0,manufacturer1);
 
-    printf("Electrodomestic\t Model \t\t Price \n");
+    printf("Appliance\t Model \t\t Price \n");
     printf("%s \t %s \t %.2f \n", E->name, E->model, E->price);
 
     setPrice(E,6500.0);

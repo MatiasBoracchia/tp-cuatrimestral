@@ -6,20 +6,20 @@
 
 #ifndef TP_CUATRIMESTRAL_INDIVIDUAL_CATALOGUE_H
 #define TP_CUATRIMESTRAL_INDIVIDUAL_CATALOGUE_H
-#include "Electrodomestic.h"
+#include "Appliance.h"
 typedef struct catalogue Catalogue;
 struct catalogue{
     char* id;
     char* name;
     int discount;
-    Electrodomestic** products;
+    Appliance** products;
     int amountOfElectrodomestics;
     int maxAmountOfElectrodomestics;
 };
 Catalogue* createCatalogue(char* id, char* name,int discount,int maxAmountOfElectrodomestics);
 void setDiscount(Catalogue* catalogue, int discount);
-float calculatePriceWithDiscount(Catalogue* catalogue, Electrodomestic* electrodomestic);
-void addToCatalogue(Catalogue* catalogue, Electrodomestic* electrodomestic);
+float calculatePriceWithDiscount(Catalogue* catalogue, Appliance* electrodomestic);
+void addToCatalogue(Catalogue* catalogue, Appliance* electrodomestic);
 
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_CATALOGUE_H
 

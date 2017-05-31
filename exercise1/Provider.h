@@ -6,7 +6,7 @@
 
 #ifndef TP_CUATRIMESTRAL_INDIVIDUAL_PROVIDER_H
 #define TP_CUATRIMESTRAL_INDIVIDUAL_PROVIDER_H
-#include "Electrodomestic.h"
+#include "Appliance.h"
 typedef struct provider Provider;
 struct provider{
     char* name;
@@ -15,13 +15,13 @@ struct provider{
     char* city;
     char* phoneNumber;
     char* web;
-    Electrodomestic** products;
+    Appliance** products;
     int amountOfElectrodomestics;
     int maxAmountofElectro;
 };
 Provider* createProvider(char* name, char* description, char* location, char* city, char* phoneNumber, char* web,int maxAmountOfElectro);
-void receiveProduct(Provider* provider, Electrodomestic* electrodomestic);
-Electrodomestic* providesProduct(Provider* provider, Electrodomestic* electrodomestic);
+void receiveProduct(Provider* provider, Appliance* electrodomestic);
+Appliance* providesProduct(Provider* provider, Appliance* electrodomestic);
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_PROVIDER_H
 
 

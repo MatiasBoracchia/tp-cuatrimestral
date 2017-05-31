@@ -7,15 +7,15 @@
 #include <stdio.h>
 #include "Manufacturer.h"
 
-typedef struct electrodomestic Electrodomestic;
-struct electrodomestic {
+typedef struct appliance Appliance;
+struct appliance {
     char* name;
     char* model;
     float price;
     Manufacturer* manufacturer;
 };
-Electrodomestic* createElectrodomestic(char* name, char* model, float price, Manufacturer* manufacturer);
-void setPrice(Electrodomestic* electrodomestic , float newPrice);
+Appliance* createElectrodomestic(char* name, char* model, float price, Manufacturer* manufacturer);
+void setPrice(Appliance* electrodomestic , float newPrice);
 
 
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_ELECTRODOMESTIC_H
