@@ -3,5 +3,5 @@ project(tp-cuatrimestral-individual)
 
 set(CMAKE_C_STANDARD 99)
 
-set(SOURCE_FILES main.c exercise1/Appliance.h exercise1/Provider.h exercise1/Label.h exercise1/Catalogue.h exercise1/Manufacturer.h exercise1/Cart.h exercise1/CartLine.h exercise1/Invoice.h exercise1/InvoiceLine.h exercise1/Appliance.c exercise1/Catalogue.c)
+set(SOURCE_FILES main.c exercise1/Appliance.h exercise1/Provider.h exercise1/Label.h exercise1/Catalogue.h exercise1/Manufacturer.h exercise1/Cart.h exercise1/Invoice.h exercise1/InvoiceLine.h exercise1/Appliance.c exercise1/Catalogue.c)
 add_executable(tp-cuatrimestral-individual ${SOURCE_FILES})

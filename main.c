@@ -2,29 +2,30 @@
 #include <mem.h>
 
 
-#include "tp1/Appliance.h"
-#include "tp1/Catalogue.h"
-#include "tp1/Manufacturer.c"
-#include "tp1/Provider.c"
+#include "exercise1/Appliance.h"
+#include "exercise1/Catalogue.h"
+#include "exercise1/Manufacturer.c"
+#include "exercise1/Provider.c"
+#include "exercise1/Invoice.h"
 
-#include "tp3/Library.c"
-#include "tp3/Person.c"
-#include "tp3/Loan.c"
-#include "tp3/Material.c"
-#include "tp3/Book.c"
-#include "tp3/Student.c"
+#include "exercise3/Library.c"
+#include "exercise3/Person.c"
+#include "exercise3/Loan.c"
+#include "exercise3/Material.c"
+#include "exercise3/Book.c"
+#include "exercise3/Student.c"
 
-#include "tp4/Recepcionist.c"
-#include "tp4/Client.c"
-#include "tp4/Invoice.c"
+#include "exercise4/Recepcionist.c"
+#include "exercise4/Client.c"
+#include "exercise4/Invoice.c"
 
 
-#include "tp5/Administrator.c"
-#include "tp5/Customer.c"
-#include "tp5/License.c"
-#include "tp5/Rent.h"
-#include "tp5/Surplus.h"
-#include "tp1/Invoice.h"
+#include "exercise5/Administrator.c"
+#include "exercise5/Customer.c"
+#include "exercise5/License.c"
+#include "exercise5/Rent.h"
+#include "exercise5/Surplus.h"
+
 
 int main() {
     printf("//----------TP1---------//\n");

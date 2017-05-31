@@ -6,17 +6,17 @@
 #define TP_CUATRIMESTRAL_INDIVIDUAL_ELECTRODOMESTIC_H
 #include <stdio.h>
 #include "Manufacturer.h"
+#include "Cart.h"
 
 typedef struct appliance Appliance;
 struct appliance {
     char* name;
     char* model;
     float price;
-    Manufacturer* manufacturer;
+    int tag;
 };
-Appliance* createElectrodomestic(char* name, char* model, float price, Manufacturer* manufacturer);
+Appliance* createAppliance(char* name, char* model, float price, int tag);
 void setPrice(Appliance* electrodomestic , float newPrice);
-
 
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_ELECTRODOMESTIC_H
 

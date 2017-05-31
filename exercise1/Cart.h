@@ -8,16 +8,20 @@
 #define TP_CUATRIMESTRAL_INDIVIDUAL_CART_H
 #include "CartLine.h"
 #include "Invoice.h"
+#include "Appliance.h"
 typedef struct cart Cart;
 struct cart{
     char* id;
     float total;
+    Appliance** appliances;
+    int amountOfAppliances;
+    int maxAppliances;
     //CartLine** products;
 };
 
 float calculateTotal(Cart* cart);
 Invoice* generateInvoice(Cart* cart);
-Cart* createCart(char* id, float total);
+Cart* createCart(char* id, float total, int maxAppliances);
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_CART_H
 
 
