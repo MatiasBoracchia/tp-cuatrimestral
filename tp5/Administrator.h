@@ -10,12 +10,14 @@
 #include "Customer.h"
 typedef struct administrator Administrator;
 struct administrator{
-    char name[15];
-    char surname[15];
+    char* name;
+    char* surname;
+    Customer** customers;
     int id;
-    Customer* customer[50];
     int amountOfCustomers;
+    int maxCustomers;
 };
+Administrator* createAdmin(char* name, char* surname, int id, int maxCustomers);
 void registerCustomer(Administrator* admin, Customer* customer);
 License generateLicense(Administrator admin, Customer* customer);
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_ADMINISTRATOR_H

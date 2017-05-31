@@ -7,8 +7,9 @@
 typedef struct room Room;
 struct room{
     int numberOfRoom;
-    char typeOfRoom[10];
-    char status[10];
+    char* typeOfRoom;
+    char* status;
 };
+Room* createRoom(char* typeOfRoom, char* status, int numberOfRoom);
 void lodgeCustomer();
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_ROOM_H

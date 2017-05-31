@@ -7,7 +7,6 @@
 #include "Loan.h"
 #include "Material.h"
 typedef struct person Person;
-
 struct person{
     char* type;
     char* name;
@@ -17,12 +16,7 @@ struct person{
     int numberOfBooks;
     double debt;
 };
-
-
-
-
-
-
+//No crear person, crear student o professor
 void takeMaterial(Person* person, Material* material, Loan* loan, char* date);
 void returnMaterial(Person* person, Material* material, Loan* loan, int daysKept);
 

@@ -8,11 +8,14 @@
 #include "Room.h"
 typedef struct recepcionist Recepcionist;
 struct recepcionist{
-    char name[15];
-    char surname[15];
-    Room* rooms[20];
+    char* name;
+    char* surname;
+    Room** rooms;
+    int maxCapacity;
+    int roomsOccupied;
     int id;
     int amountOfRooms;
 };
+Recepcionist* createRecepcionist(char* name, char* surname,int maxCapacity,int id, int amounOfRooms);
 void giveInformation(Recepcionist* recepcionist);
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_RECEPCIONIST_H

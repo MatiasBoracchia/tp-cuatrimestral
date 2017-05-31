@@ -16,10 +16,12 @@ struct provider{
     char* phoneNumber;
     char* web;
     Electrodomestic** products;
+    int amountOfElectrodomestics;
+    int maxAmountofElectro;
 };
-Provider* createProvider(char* name, char* description, char* location, char* city, char* phoneNumber, char* web, Electrodomestic** products);
-void receiveProduct(Provider* provider, Electrodomestic** electrodomestic);
-void providesProduct(Provider* provider, Electrodomestic** electrodomestic);
+Provider* createProvider(char* name, char* description, char* location, char* city, char* phoneNumber, char* web,int maxAmountOfElectro);
+void receiveProduct(Provider* provider, Electrodomestic* electrodomestic);
+Electrodomestic* providesProduct(Provider* provider, Electrodomestic* electrodomestic);
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_PROVIDER_H
 
 

@@ -4,25 +4,28 @@
 #include "Library.h"
 
 void addPerson(Library* library, Person* person){
-    if(library->numberOfPeople < 50){
+    if(library->numberOfPeople < library->maxCapacityPeople){
         library->person[library->numberOfPeople] = person;
         library->numberOfPeople = library->numberOfPeople +1;
     }else{
-        //Person person1[200];
-        //library->person = person1;
+        printf("CANNOT ACCEPT MORE PEOPLE ");
     }
 }
 
 void addMaterial(Library* library, Material* material){
-    if(library->numberOfMaterial < 100){
+    if(library->numberOfMaterial < library->maxCapacityMaterials){
         library->material[library->numberOfMaterial] = material;
         library->numberOfMaterial = library->numberOfMaterial +1;
     }
 }
 
-Library* createLibrary(Material** material, Person** person, int numberOfMaterials, int numberOfPeople){
+Library* createLibrary(int maxCapacityMaterials, int maxCapacityPeople){
     Library* library = malloc(sizeof(Library));
-    library->numberOfMaterials = numberOfMaterials;
-    library->numberOfPeople = numberOfPeople;
-    //faltan los dos ARRAYS
+    library->maxCapacityPeople = maxCapacityPeople;
+    library->maxCapacityMaterials = maxCapacityMaterials;
+
+    library->material = malloc(sizeof(Material*)*maxCapacityMaterials);
+    library->person = malloc(sizeof(Person*)*maxCapacityPeople);
+
+    return library;
 }

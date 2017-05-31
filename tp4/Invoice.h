@@ -9,12 +9,13 @@
 #include "Room.h"
 typedef struct invoice Invoice;
 struct invoice{
-    int id;
-    char hotelName[10];
-    char clientName[15];
-    char clientSurname[15];
+    int invoiceId;
+    char* hotelName;
+    char* clientName;
+    char* clientSurname;
     int clientId;
     double debt;
 };
+Invoice* createInvoice(char* hotelName, char* clientName, char* clientSurname, int clientId, double debt, int invoiceId);
 void payForRoom(Invoice* invoice, Client* client, Room* room);
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_INVOICE_H

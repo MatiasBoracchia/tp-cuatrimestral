@@ -6,11 +6,12 @@
 #define TP_CUATRIMESTRAL_INDIVIDUAL_RENT_H
 typedef struct rent Rent;
 struct rent{
-    char movieName[15];
+    char* movieName;
+    char* dateRented;
     int clientId;
-    char dateRented[10];
     int daysKept;
 };
+Rent* createRent(char* movieName, char* dateRented, int clientId, int daysKept);
 void rentMovie();
 int checkForAvailability();
 char checkNewMovies();

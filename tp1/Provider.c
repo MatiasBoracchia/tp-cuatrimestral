@@ -4,25 +4,21 @@
 #include "Provider.h"
 
 void receiveProduct(Provider* provider, Electrodomestic* electrodomestic){
-    for (int i = 0; i < 20 ; ++i) {
-        if(provider->products[i]==NULL){
-            provider->products[i] = electrodomestic;
-            break;
-        }
+    if(provider->amountOfElectrodomestics<provider->maxAmountofElectro){
+        provider->products[provider->amountOfElectrodomestics] = electrodomestic;
+        provider->amountOfElectrodomestics = provider->amountOfElectrodomestics +1;
     }
-    return;
 }
-void providesProduct(Provider* provider, Electrodomestic* electrodomestic){
-    for (int i = 0; i < 20 ; ++i) {
-        if(provider->products[i]==electrodomestic){
-            provider->products[i] =NULL ;
-            break;
-        }
+Electrodomestic* providesProduct(Provider* provider, Electrodomestic* electrodomestic){
+    Electrodomestic* result;
+    if(provider->amountOfElectrodomestics > 0){
+        result = provider->products[provider->amountOfElectrodomestics];
+        provider->amountOfElectrodomestics = provider->amountOfElectrodomestics -1;
     }
-    return;
+    return result;
 }
 
-Provider* createProvider(char* name, char* description, char* location, char* city, char* phoneNumber, char* web, Electrodomestic** products){
+Provider* createProvider(char* name, char* description, char* location, char* city, char* phoneNumber, char* web, int maxAmountOfElectro){
     Provider* provider = malloc(sizeof(Provider));
     provider->web = web;
     provider->phoneNumber = phoneNumber;
@@ -30,6 +26,11 @@ Provider* createProvider(char* name, char* description, char* location, char* ci
     provider->name = name;
     provider->city = city;
     provider->description =description;
+    provider->maxAmountofElectro = maxAmountOfElectro;
+
+    provider->products = malloc(sizeof(Electrodomestic*)*maxAmountOfElectro);
+
+    return provider;
 
     //falta products
 }

@@ -13,10 +13,12 @@ struct library{
     Material** material;
     Person** person;
     int numberOfMaterials;
+    int maxCapacityMaterials;
+    int maxCapacityPeople;
     int numberOfPeople;
 
 };
-Library* createLibrary(Material** material, Person** person, int numberOfMaterials, int numberOfPeople);
+Library* createLibrary(int maxCapacityMaterials, int maxCapacityPeople);
 void addPerson(Library* library, Person** person);
 void addMaterial(Library* library, Material** material);
 

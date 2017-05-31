@@ -6,10 +6,10 @@
 #define TP_CUATRIMESTRAL_INDIVIDUAL_SURPLUS_H
 typedef struct surplus Surplus;
 struct surplus{
-    char notReturnedMovies[20][15]; //list of movies not returned
-    double amount;
-    double moneyIn;
-    char mostActiveClients[10][30];
+    //char notReturnedMovies[20][15]; //list of movies not returned
+    //double amount;
+    //double moneyIn;
+    //char mostActiveClients[10][30];
 
 };
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_SURPLUS_H

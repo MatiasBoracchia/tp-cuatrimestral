@@ -9,10 +9,11 @@
 #include "Recepcionist.h"
 typedef struct client Client;
 struct client{
-    char name[15];
-    char surname[15];
+    char* name;
+    char* surname;
     int id;
 };
+Client* createClient(char* name, char* surname, int id);
 void makeReservation(Client* client, Room* room);
 void askInformation(Client* client, Recepcionist* recepcionist);
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_CLIENT_H

@@ -8,9 +8,14 @@
 #include <stdlib.h>
 
 void registerCustomer(Administrator* admin, Customer* customer){
-    admin->customer[admin->amountOfCustomers] = customer;
-    int aux = admin->amountOfCustomers;
-    admin->amountOfCustomers = aux+1;
+    if(admin->amountOfCustomers<admin->maxCustomers){
+        admin->customers[admin->amountOfCustomers] = customer;
+        int aux = admin->amountOfCustomers;
+        admin->amountOfCustomers = aux+1;
+    } else{
+        printf("CANNOT REGISTER MORE CUSTOMERS");
+    }
+
 }
 License generateLicense(Administrator admin, Customer* customer){
     License license;
@@ -19,4 +24,17 @@ License generateLicense(Administrator admin, Customer* customer){
     strcpy(customer->license,&license);
     //client->license = &license;
     return license;
+}
+
+Administrator* createAdmin(char* name, char* surname, int id, int maxCustomers){
+    Administrator* admin = malloc(sizeof(Administrator));
+    admin->name = name;
+    admin->amountOfCustomers = 0;
+    admin->maxCustomers = maxCustomers;
+    admin->id = id;
+    admin->surname = surname;
+
+    admin->customers = malloc(sizeof(Customer*)*maxCustomers);
+
+    return admin;
 }

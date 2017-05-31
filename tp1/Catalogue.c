@@ -25,5 +25,9 @@ float calculatePriceWithDiscount(Catalogue* catalogue, Electrodomestic* electrod
     return electrodomestic->price - discount;
 }
 void addToCatalogue(Catalogue* catalogue, Electrodomestic* electrodomestic){
+    if(catalogue->amountOfElectrodomestics<catalogue->maxAmountOfElectrodomestics){
+        catalogue->products[catalogue->amountOfElectrodomestics] = electrodomestic;
+        catalogue->amountOfElectrodomestics = catalogue->amountOfElectrodomestics +1;
+    }
 
 }
