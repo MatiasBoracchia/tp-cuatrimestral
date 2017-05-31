@@ -13,7 +13,7 @@ Appliance* createAppliance(char* name, char* model, float price, int tag){
     appliance1->name = name;
     appliance1->model = model;
     appliance1->price = price;
-    appliance1->tag = tag;
+    //appliance1->tag = tag;
 
     return appliance1;
 }

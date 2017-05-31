@@ -18,7 +18,6 @@ struct cart{
     int maxAppliances;
     //CartLine** products;
 };
-
 float calculateTotal(Cart* cart);
 Invoice* generateInvoice(Cart* cart);
 Cart* createCart(char* id, float total, int maxAppliances);

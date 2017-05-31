@@ -15,7 +15,7 @@ struct appliance {
     float price;
     int tag;
 };
-Appliance* createAppliance(char* name, char* model, float price, int tag);
+Appliance* createAppliance(char* name, char* model, float price);
 void setPrice(Appliance* electrodomestic , float newPrice);
 
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_ELECTRODOMESTIC_H

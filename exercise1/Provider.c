@@ -3,20 +3,14 @@
 //
 #include "Provider.h"
 
-void receiveProduct(Provider* provider, Electrodomestic* electrodomestic){
-    if(provider->amountOfElectrodomestics<provider->maxAmountofElectro){
-        provider->products[provider->amountOfElectrodomestics] = electrodomestic;
-        provider->amountOfElectrodomestics = provider->amountOfElectrodomestics +1;
+void providesProduct(Provider* provider, Catalogue* catalogue, Appliance* appliance, int quantity){
+    for (int i = 0; i < quantity ; ++i) {
+        if(searchAppliance(provider,appliance)==1){
+
+        }
     }
 }
-Electrodomestic* providesProduct(Provider* provider, Electrodomestic* electrodomestic){
-    Electrodomestic* result;
-    if(provider->amountOfElectrodomestics > 0){
-        result = provider->products[provider->amountOfElectrodomestics];
-        provider->amountOfElectrodomestics = provider->amountOfElectrodomestics -1;
-    }
-    return result;
-}
+
 
 Provider* createProvider(char* name, char* description, char* location, char* city, char* phoneNumber, char* web, int maxAmountOfElectro){
     Provider* provider = malloc(sizeof(Provider));
@@ -28,9 +22,26 @@ Provider* createProvider(char* name, char* description, char* location, char* ci
     provider->description =description;
     provider->maxAmountofElectro = maxAmountOfElectro;
 
-    provider->products = malloc(sizeof(Electrodomestic*)*maxAmountOfElectro);
+    provider->products = malloc(sizeof(Appliance*)*maxAmountOfElectro);
 
     return provider;
+}
 
-    //falta products
+int searchAndRemoveAppliance(Provider* provider, Appliance* appliance){
+    for (int i = 0; i < provider->amountOfElectrodomestics; ++i) {
+        if(provider->products[i]->model = appliance->model){
+            free(provider->products[i]);
+            reorder(provider,i);
+            return 1;
+        }
+    }
+    return 0;
+}
+void reorder(Provider* provider, int position){
+    if(provider->amountOfElectrodomestics != position){
+        provider->products[position] = provider->products[provider->amountOfElectrodomestics-1];
+        provider->amountOfElectrodomestics = provider->amountOfElectrodomestics -1;
+    }
+
+
 }

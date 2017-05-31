@@ -29,9 +29,9 @@
 
 int main() {
     printf("//----------TP1---------//\n");
-
+    Appliance* E = createAppliance("Microwave","Samsung hx3",7100.0);
     Manufacturer* manufacturer1 = createManufacturer("S-R","We worken","Buenos Aires","Bahia Blanca","15-3142-5967","www.s-r.come");
-    Appliance* E = createElectrodomestic("Microwave","Samsung hx3",7100.0,manufacturer1);
+
 
     printf("Appliance\t Model \t\t Price \n");
     printf("%s \t %s \t %.2f \n", E->name, E->model, E->price);
@@ -48,7 +48,7 @@ int main() {
     Provider* P= createProvider("Provider X2","Provider X2 is a company that specialices in...","Buenos Aires","Chacarita","15-4140-1247","www.providerx2.com",25);
 
 
-    //----------TP2---------//
+ /*   //----------TP2---------//
 
 
     printf("//----------TP3---------//\n");
@@ -117,7 +117,7 @@ int main() {
 
 
 
-
+*/
 
 
 
