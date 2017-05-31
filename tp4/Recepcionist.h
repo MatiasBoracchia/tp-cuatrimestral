@@ -14,8 +14,8 @@ struct recepcionist{
     int maxCapacity;
     int roomsOccupied;
     int id;
-    int amountOfRooms;
 };
-Recepcionist* createRecepcionist(char* name, char* surname,int maxCapacity,int id, int amounOfRooms);
+
+Recepcionist* createRecepcionist(char* name, char* surname,int maxCapacity,int id);
 void giveInformation(Recepcionist* recepcionist);
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_RECEPCIONIST_H

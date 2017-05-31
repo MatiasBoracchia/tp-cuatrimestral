@@ -7,6 +7,7 @@
 
 #include "Room.h"
 #include "Recepcionist.h"
+#include <stdlib.h>
 typedef struct client Client;
 struct client{
     char* name;
@@ -14,6 +15,6 @@ struct client{
     int id;
 };
 Client* createClient(char* name, char* surname, int id);
-void makeReservation(Client* client, Room* room);
+void makeReservation(Client* client,Recepcionist* recepcionist,int number);
 void askInformation(Client* client, Recepcionist* recepcionist);
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_CLIENT_H

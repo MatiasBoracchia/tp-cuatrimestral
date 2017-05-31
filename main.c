@@ -20,10 +20,11 @@
 
 
 #include "tp5/Administrator.c"
-#include "tp5/Customer.h"
-#include "tp5/License.h"
+#include "tp5/Customer.c"
+#include "tp5/License.c"
 #include "tp5/Rent.h"
 #include "tp5/Surplus.h"
+#include "tp1/Invoice.h"
 
 int main() {
     printf("//----------TP1---------//\n");
@@ -80,58 +81,33 @@ int main() {
     }
 
 
-    //-------------TP4----------//
     printf("//----------TP4---------//\n");
-    Room room;
-    room.numberOfRoom = 12;
-    strcpy(room.status, "Reserved");
-    strcpy(room.typeOfRoom, "Normal");
 
-    Recepcionist recepcionist;
-    strcpy(recepcionist.name,"Juana");
-    strcpy(recepcionist.surname,"Rios");
-    recepcionist.id = 444;
-    recepcionist.rooms[0] = &room;
-    recepcionist.amountOfRooms = 1;
-    giveInformation(&recepcionist);
+    Recepcionist* recepcionist = createRecepcionist("Juana","Rios",20,444);
 
-    Client client;
-    client.id = 1230;
-    strcpy(client.name, "Lorenzo");
-    strcpy(client.surname, "Rojas");
+    giveInformation(recepcionist);
+    Client* client = createClient("Lorenzo","Rojas",1230);
+
+    makeReservation(client,recepcionist, 0);
 
 
-    makeReservation(&client,&room);
+    Invoice* invoice1 =createInvoice("Paquitos",client->name,client->surname,client->id,10,898);
+    //payForRoom(invoice1,client,recepcionist,);
+    //printf("Invoice: %d \t %s \t %s \n",invoice1->id,invoice1->clientName,room.status);
+    giveInformation(recepcionist);
 
-    Invoice invoice1;
-    invoice1.id = 898;
-    strcpy(invoice1.hotelName, "Paquitos");
-
-    payForRoom(&invoice1,&client,&room);
-    printf("Invoice: %d \t %s \t %s \n",invoice1.id,invoice1.clientName,room.status);
-    giveInformation(&recepcionist);
-
-    //-------------TP5----------//
     printf("//----------TP5---------//\n");
-    License license1;
-    license1.licenseId = 4444;
 
-    Customer customer;
-    customer.id = 47897;
-    strcpy(customer.name, "Francisco");
-    strcpy(customer.surname, "Garcia");
+    License* license1 = createLicense(4444);
 
+    Customer* customer = createCustomer("Francisco","Garcia", 47897,license1);
 
-    Administrator admin;
-    admin.amountOfCustomers = 0;
-    strcpy(admin.name, "Esteban");
-    strcpy(admin.surname, "Lauri");
-    admin.id = 12345;
+    Administrator* admin = createAdmin("Esteban", "Lauri", 12345, 20);
 
-    registerCustomer(&admin,&customer);
+    registerCustomer(admin,customer);
 
-    printf("amout of clients: %d \n",admin.amountOfCustomers);
-    printf("Name of Customer in admin: %s \n",admin.customer[0]->name);
+    printf("amout of clients: %d \n",admin->amountOfCustomers);
+    printf("Name of Customer in admin: %s \n",admin->customers[0]->name);
 
 
 

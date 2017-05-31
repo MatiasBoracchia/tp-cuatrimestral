@@ -4,12 +4,13 @@
 
 #include "Client.h"
 
-void makeReservation(Client* client, Room* room){
-    if(room->status == "Available"){
-        strcpy(room->status, "reserved");
+void makeReservation(Client* client, Recepcionist* recepcionist, int number){
+    if(recepcionist->rooms[number]->status == "Available"){
+        recepcionist->rooms[number]->status = "reserved";
+        recepcionist->roomsOccupied = recepcionist->roomsOccupied + 1;
         printf("Room was reserved");
     }else{
-        printf("The room: %d is %s \n",room->numberOfRoom, room->status);
+        printf("The room: %d is %s \n",number,recepcionist->rooms[number]->status);
         return;
     }
 
