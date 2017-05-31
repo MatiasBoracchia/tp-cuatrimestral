@@ -16,7 +16,7 @@ struct catalogue{
     int amountOfElectrodomestics;
     int maxAmountOfElectrodomestics;
 };
-Catalogue* careateCatalogue(char* id, char* name,int discount,int maxAmountOfElectrodomestics);
+Catalogue* createCatalogue(char* id, char* name,int discount,int maxAmountOfElectrodomestics);
 void setDiscount(Catalogue* catalogue, int discount);
 float calculatePriceWithDiscount(Catalogue* catalogue, Electrodomestic* electrodomestic);
 void addToCatalogue(Catalogue* catalogue, Electrodomestic* electrodomestic);

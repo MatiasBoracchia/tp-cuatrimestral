@@ -13,9 +13,9 @@ void addPerson(Library* library, Person* person){
 }
 
 void addMaterial(Library* library, Material* material){
-    if(library->numberOfMaterial < library->maxCapacityMaterials){
-        library->material[library->numberOfMaterial] = material;
-        library->numberOfMaterial = library->numberOfMaterial +1;
+    if(library->numberOfMaterials < library->maxCapacityMaterials){
+        library->material[library->numberOfMaterials] = material;
+        library->numberOfMaterials = library->numberOfMaterials +1;
     }
 }
 
@@ -26,6 +26,9 @@ Library* createLibrary(int maxCapacityMaterials, int maxCapacityPeople){
 
     library->material = malloc(sizeof(Material*)*maxCapacityMaterials);
     library->person = malloc(sizeof(Person*)*maxCapacityPeople);
+
+    library->numberOfMaterials = 0;
+    library->numberOfPeople = 0;
 
     return library;
 }

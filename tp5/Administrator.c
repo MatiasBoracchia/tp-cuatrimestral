@@ -17,14 +17,14 @@ void registerCustomer(Administrator* admin, Customer* customer){
     }
 
 }
-License generateLicense(Administrator admin, Customer* customer){
+/*License generateLicense(Administrator* admin, Customer* customer){
     License license;
     int random = rand() % 1000;
     license.licenseId = random;
     strcpy(customer->license,&license);
     //client->license = &license;
     return license;
-}
+}*/
 
 Administrator* createAdmin(char* name, char* surname, int id, int maxCustomers){
     Administrator* admin = malloc(sizeof(Administrator));

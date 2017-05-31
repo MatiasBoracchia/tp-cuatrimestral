@@ -4,14 +4,15 @@
 
 #include "tp1/Electrodomestic.h"
 #include "tp1/Catalogue.h"
-#include "tp1/Provider.h"
-
+#include "tp1/Manufacturer.c"
+#include "tp1/Provider.c"
 
 #include "tp3/Library.c"
 #include "tp3/Person.c"
 #include "tp3/Loan.c"
 #include "tp3/Material.c"
-
+#include "tp3/Book.c"
+#include "tp3/Student.c"
 
 #include "tp4/Recepcionist.c"
 #include "tp4/Client.c"
@@ -25,99 +26,58 @@
 #include "tp5/Surplus.h"
 
 int main() {
-    //----------TP1---------//
     printf("//----------TP1---------//\n");
-    Electrodomestic E;
-    strcpy(E.name,"Microwave");
-    strcpy(E.model,"Samsung hx3");
-    E.price = 7100.0;
+
+    Manufacturer* manufacturer1 = createManufacturer("S-R","We worken","Buenos Aires","Bahia Blanca","15-3142-5967","www.s-r.come");
+    Electrodomestic* E = createElectrodomestic("Microwave","Samsung hx3",7100.0,manufacturer1);
 
     printf("Electrodomestic\t Model \t\t Price \n");
-    printf("%s \t %s \t %.2f \n", E.name, E.model, E.price);
+    printf("%s \t %s \t %.2f \n", E->name, E->model, E->price);
 
-    setPrice(&E,6500.0);
-    printf("%s \t %s \t %.2f \n", E.name, E.model, E.price);
+    setPrice(E,6500.0);
+    printf("%s \t %s \t %.2f \n", E->name, E->model, E->price);
 
+    Catalogue* C= createCatalogue("12CWE345","Kitchen Products",0,20);
+    addToCatalogue(C,E);
+    setDiscount(C,5);
+    float price = calculatePriceWithDiscount(C,E);
+    printf("The new price of %s with discunt %d is %.2f \n",E->name,C->discount,price);
 
-    Catalogue C;
-    strcpy(C.id,"12CWE345");
-    strcpy(C.name,"Kitchen Products");
-    C.discount = 0;
-    C.products[0] = E;
-    setDiscount(&C,5);
-    float price = calculatePriceWithDiscount(&C,&E);
-    printf("The new price of %s with discunt %d is %.2f \n",E.name,C.discount,price);
+    Provider* P= createProvider("Provider X2","Provider X2 is a company that specialices in...","Buenos Aires","Chacarita","15-4140-1247","www.providerx2.com",25);
 
-
-    Provider P;
-
-    strcpy(P.name,"Provider X2");
-    strcpy(P.city,"Chacarita");
-    strcpy(P.description,"Provider X2 is a company that specialices in...");
-    strcpy(P.location,"Buenos Aires");
-    strcpy(P.phoneNumber,"15-4140-1247");
-    strcpy(P.web,"www.providerx2.com");
-//
-//    receiveProduct(&P,&E);
-//
-//    for (int i = 0; i < 20 ; ++i) {
-//        if (P.products[i]==){
-//            break;
-//        }
-//        printf("Product Name: %s\n",P.products[i]);
-//    }
 
     //----------TP2---------//
 
 
-    //----------TP3---------//
     printf("//----------TP3---------//\n");
 
-    Material material;
-    strcpy(material.author,"Perez");
-    strcpy(material.code, "ABCD123");
-    strcpy(material.status, "availabel");
-    strcpy(material.title,"Harry Potter");
-    strcpy(material.type,"Fanatsy");
-    material.year = 1997;
 
-    Person person;
-    strcpy(person.type, "Student");
-    strcpy(person.mail, "juan@gmail.com");
-    strcpy(person.name, "Juan");
-    strcpy(person.surname, "Lagos");
-    strcpy(person.telephone, "1541422589");
-    person.debt = 0.0;
-    person.numberOfBooks = 0;
+    Material* material = createMaterial("Fanatsy","ABCD123","Rowlig","Harry Potter","Availabel",1997);
+    Book* book1 = createBook(material,"Santillana");
+    Student* student1 = createStudent(4004);
 
-    Loan loan1;
-    loan1.daysKept = 0;
-    strcpy(loan1.code, "XYZ987");
-    strcpy(loan1.exitDate, "");
-    loan1.charge = 10.0;
+    Person* person1 = createPerson("Student","Juan","Lagos","juan@gmail.com","15-4142-2589",0,0.0,student1,NULL);
+
+    Loan* loan1 = createLoan("XYZ987","",10.0,1);
+    Library* library1 = createLibrary(100,100);
+
+    takeMaterial(person1, book1->material, loan1, "23/5/2017");
+    returnMaterial(person1, book1->material, loan1, 2);
 
 
-    Library library;
-    library.numberOfPeople = 0;
-    library.numberOfMaterial = 0;
-
-    takeMaterial(&person, &material, &loan1, "23/5/2017");
-    returnMaterial(&person, &material, &loan1, 2);
-
-    printf("The %s debt is: %.2f \n", person.type, person.debt);
+    printf("The %s debt is: %.2f \n", person1->type, person1->debt);
 
 
-    addMaterial(&library,&material);
-    addPerson(&library,&person);
-    printf("The amount of books in the library is: %d \n",library.numberOfMaterial);
-    printf("The amount of people in the library is: %d  \n",library.numberOfPeople);
+    addMaterial(library1,book1->material);
+    addPerson(library1,person1);
+    printf("The amount of books in the library is: %d \n",library1->numberOfMaterials);
+    printf("The amount of people in the library is: %d  \n",library1->numberOfPeople);
 
 
 
-    for (int i = 0; i < library.numberOfMaterial; ++i) {
-        printf("Info of material: %s,%s \n ",library.material[i]->title,library.material[i]->status);
+    for (int i = 0; i < library1->numberOfMaterials; ++i) {
+        printf("Info of material: %s,%s \n ",library1->material[i]->title,library1->material[i]->status);
     }
-
 
 
     //-------------TP4----------//

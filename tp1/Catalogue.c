@@ -4,7 +4,7 @@
 
 #include <malloc.h>
 #include "Catalogue.h"
-Catalogue* careateCatalogue(char* id, char* name,int discount,int maxAmountOfElectrodomestics){
+Catalogue* createCatalogue(char* id, char* name,int discount,int maxAmountOfElectrodomestics){
     Catalogue* result = malloc(sizeof(Catalogue));
     result->id = id;
     result->name = name;

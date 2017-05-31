@@ -4,19 +4,25 @@
 
 #ifndef TP_CUATRIMESTRAL_INDIVIDUAL_PERSON_H
 #define TP_CUATRIMESTRAL_INDIVIDUAL_PERSON_H
+
+#include "Student.h"
+#include <stdlib.h>
 #include "Loan.h"
 #include "Material.h"
+#include "Professor.h"
 typedef struct person Person;
 struct person{
     char* type;
     char* name;
     char* surname;
     char* mail;
-    char * telephone;
+    char* telephone;
     int numberOfBooks;
     double debt;
+    Student* student;
+    Professor* professor;
 };
-//No crear person, crear student o professor
+Person* createPerson(char* type, char* name, char* surname, char* mail, char* telephone, int numberOfBooks, double debt, Student* student, Professor* professor);
 void takeMaterial(Person* person, Material* material, Loan* loan, char* date);
 void returnMaterial(Person* person, Material* material, Loan* loan, int daysKept);
 

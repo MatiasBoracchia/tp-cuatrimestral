@@ -1,7 +1,7 @@
 //
 // Created by Usuario on 25-May-17.
 //
-
+#include <stdlib.h>
 #ifndef TP_CUATRIMESTRAL_INDIVIDUAL_MATERIAL_H
 #define TP_CUATRIMESTRAL_INDIVIDUAL_MATERIAL_H
 
@@ -14,7 +14,8 @@ struct material{
     char* status;
     int year;
 };
-//o creo un book o una magazine no un material
+
+Material* createMaterial(char* type, char* code, char* author, char* title, char* status, int year);
 
 void deleteMaterial(Material* material);
 void replaceMaterial(Material* material, Material* newMaterial);
