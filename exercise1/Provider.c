@@ -5,9 +5,7 @@
 
 void providesProduct(Provider* provider, Catalogue* catalogue, Appliance* appliance, int quantity){
     for (int i = 0; i < quantity ; ++i) {
-        if(searchAppliance(provider,appliance)==1){
 
-        }
     }
 }
 

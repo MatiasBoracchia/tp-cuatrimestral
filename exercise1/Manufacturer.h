@@ -8,7 +8,6 @@
 #ifndef TP_CUATRIMESTRAL_INDIVIDUAL_MANUFACTURER_H
 #define TP_CUATRIMESTRAL_INDIVIDUAL_MANUFACTURER_H
 typedef struct manufacturer Manufacturer;
-
 struct manufacturer{
     char* name;
     char* description;

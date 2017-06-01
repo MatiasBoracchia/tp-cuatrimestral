@@ -17,7 +17,7 @@
 
 #include "exercise4/Recepcionist.c"
 #include "exercise4/Client.c"
-#include "exercise4/Invoice.c"
+#include "exercise4/Invoice2.c"
 
 
 #include "exercise5/Administrator.c"
@@ -30,7 +30,7 @@
 int main() {
     printf("//----------TP1---------//\n");
     Appliance* E = createAppliance("Microwave","Samsung hx3",7100.0);
-    Manufacturer* manufacturer1 = createManufacturer("S-R","We worken","Buenos Aires","Bahia Blanca","15-3142-5967","www.s-r.come");
+    Manufacturer* manufacturer1 = createManufacturer("S-R","We worken","Buenos Aires","Bahia Blanca","15-3142-5967","www.s-r.come",E);
 
 
     printf("Appliance\t Model \t\t Price \n");

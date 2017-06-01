@@ -6,7 +6,6 @@
 
 #ifndef TP_CUATRIMESTRAL_INDIVIDUAL_CART_H
 #define TP_CUATRIMESTRAL_INDIVIDUAL_CART_H
-#include "CartLine.h"
 #include "Invoice.h"
 #include "Appliance.h"
 typedef struct cart Cart;

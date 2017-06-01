@@ -1,15 +1,13 @@
 //
-// Created by Usuario on 24-May-17.
+// Created by Usuario on 01-Jun-17.
 //
 
-#ifndef TP_CUATRIMESTRAL_INDIVIDUAL_ELECTRODOMESTIC_H
-#define TP_CUATRIMESTRAL_INDIVIDUAL_ELECTRODOMESTIC_H
+#ifndef TP_CUATRIMESTRAL_INDIVIDUAL_APPLIANCE_H
+#define TP_CUATRIMESTRAL_INDIVIDUAL_APPLIANCE_H
 #include <stdio.h>
-#include "Manufacturer.h"
-#include "Cart.h"
-
+#include <stdlib.h>
 typedef struct appliance Appliance;
-struct appliance {
+struct appliance{
     char* name;
     char* model;
     float price;
@@ -17,9 +15,4 @@ struct appliance {
 };
 Appliance* createAppliance(char* name, char* model, float price);
 void setPrice(Appliance* electrodomestic , float newPrice);
-
-#endif //TP_CUATRIMESTRAL_INDIVIDUAL_ELECTRODOMESTIC_H
-
-
-
-
+#endif //TP_CUATRIMESTRAL_INDIVIDUAL_APPLIANCE_H

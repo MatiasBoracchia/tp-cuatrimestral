@@ -30,6 +30,7 @@ void addToCatalogue(Catalogue* catalogue, Appliance* electrodomestic){
         catalogue->amountOfElectrodomestics = catalogue->amountOfElectrodomestics +1;
     }
 }
+
 void addToCart(Catalogue* catalogue,Cart* cart, int numberOnTheCatalogue){
     Appliance* appliance1 = catalogue->products[numberOnTheCatalogue];
     cart->appliances[cart->amountOfAppliances] =  appliance1;

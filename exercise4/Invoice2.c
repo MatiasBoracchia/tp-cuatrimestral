@@ -2,9 +2,9 @@
 // Created by Usuario on 26-May-17.
 //
 
-#include "Invoice.h"
+#include "Invoice2.h"
 
-void payForRoom(Invoice* invoice, Client* client, Room* room){
+void payForRoom(Invoice2* invoice, Client* client, Room* room){
 //    invoice->clientId = client->id;
 //    strcpy(invoice->clientName, client->name);
 //    strcpy(invoice->clientSurname, client->surname);
@@ -12,8 +12,9 @@ void payForRoom(Invoice* invoice, Client* client, Room* room){
 //    invoice->debt = 100;
 
 }
-Invoice* createInvoice(char* hotelName, char* clientName, char* clientSurname, int clientId, double debt, int invoiceId){
-    Invoice* invoice = malloc(sizeof(Invoice));
+
+Invoice2* createInvoice2(char* hotelName, char* clientName, char* clientSurname, int clientId, double debt, int invoiceId){
+    Invoice2* invoice = malloc(sizeof(Invoice2));
     invoice->clientId = clientId;
     invoice->clientName = clientName;
     invoice->clientSurname = clientSurname;

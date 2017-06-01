@@ -8,12 +8,11 @@ void setPrice(Appliance* electrodomestic , float newPrice){
     electrodomestic->price = newPrice;
 }
 
-Appliance* createAppliance(char* name, char* model, float price, int tag){
+Appliance* createAppliance(char* name, char* model, float price){
     Appliance* appliance1 = malloc(sizeof(Appliance));
     appliance1->name = name;
     appliance1->model = model;
     appliance1->price = price;
-    //appliance1->tag = tag;
 
     return appliance1;
 }

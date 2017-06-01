@@ -22,8 +22,7 @@ Manufacturer* createManufacturer(char* name, char* description, char* location, 
 
 void supply(Manufacturer* manufacturer, Provider* provider, int quantity){
     for (int i = 0; i < quantity ; ++i) {
-        int tag1 = (rand()%1000000) +10000;
-        Appliance* appliance1 = createAppliance( manufacturer->applianceProduced->name,manufacturer->applianceProduced->model,manufacturer->applianceProduced->price,tag1);
+        Appliance* appliance1 = createAppliance( manufacturer->applianceProduced->name,manufacturer->applianceProduced->model,manufacturer->applianceProduced->price);
         appliance1->tag = manufacturer->applianceProduced->tag;
         appliance1->model = manufacturer->applianceProduced->model;
         appliance1->name = manufacturer->applianceProduced->name;
