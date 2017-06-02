@@ -6,8 +6,9 @@
 #include "exercise1/Catalogue.h"
 #include "exercise1/Manufacturer.c"
 #include "exercise1/Provider.c"
-#include "exercise1/Invoice.h"
+#include "exercise1/Invoice.c"
 #include "exercise1/Shop.c"
+#include "exercise1/Cart.c"
 
 #include "exercise3/Library.c"
 #include "exercise3/Person.c"
@@ -44,16 +45,22 @@ int main() {
     supply(manufacturer2,provider1,10);
     supply(manufacturer1,provider1,10);
 
-    printf("Quantity of %s %s is: %d \n",appliance1->name,appliance1->model,checkQuantity(provider1,appliance1));
+    printf("Quantity of %s %s of Provider is: %d \n",appliance1->name,appliance1->model,checkQuantity(provider1,appliance1));
+
 
     Catalogue* catalogue1 = createCatalogue("1234567","Appliances",15,100);
     Shop* shop1 = createShop(catalogue1,"PPP");
     supplyToShop(provider1,shop1);
 
-    printf("Quantity of %s %s is: %d \n",appliance1->name,appliance1->model,checkQuantity(provider1,appliance1));
+    printf("Quantity of %s %s of Provider is: %d \n",appliance1->name,appliance1->model,checkQuantity(provider1,appliance1));
+    printf("Quantity registered of %s %s of Provider is: %d \n",appliance1->name,appliance1->model,provider1->amountOfElectrodomestics);
 
+    Cart* cart1 = createCart("myCart003",10);
+    printf("Amount of %s %s of Shopis %d \n",appliance1->name,appliance1->model,checkQuantityInCatalogue(shop1->shopCatalogue,appliance1));
+    printf("Amount of Electro in Shop is %d \n",shop1->shopCatalogue->amountOfElectrodomestics);
+    //addToCart(shop1,cart1,appliance1,3);
 
-    printf("Appliance\t Model \t\t Price \n");
+    /*printf("Appliance\t Model \t\t Price \n");
     printf("%s \t %s \t %.2f \n", appliance1->name, appliance1->model, appliance1->price);
 
     setPrice(appliance1,6500.0);
@@ -66,7 +73,7 @@ int main() {
     printf("The new price of %s with discunt %d is %.2f \n",appliance1->name,C->discount,price);
 
     Provider* P= createProvider("Provider X2","Provider X2 is a company that specialices in...","Buenos Aires","Chacarita","15-4140-1247","www.providerx2.com",25);
-
+*/
 
  /*   //----------TP2---------//
 

@@ -26,13 +26,10 @@ struct provider{
     int maxAmountofElectro;
 };
 Provider* createProvider(char* name, char* description, char* location, char* city, char* phoneNumber, char* web,int maxAmountOfElectro);
-void providesProduct(Provider* provider, Catalogue* catalogue, Appliance* appliance, int quantity);
-
 int searchAndRemoveAppliance(Provider* provider, Appliance* appliance);
 void reorder(Provider* provider, int position);
 int checkQuantity(Provider* provider1, Appliance* appliance1);
 void supplyToShop(Provider* provider1, Shop* shop);
-void removeApplances(Provider* provider1);
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_PROVIDER_H
 
 

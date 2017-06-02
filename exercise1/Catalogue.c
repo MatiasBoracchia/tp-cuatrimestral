@@ -40,3 +40,12 @@ Appliance* removeApplianceFromCatalogue(Catalogue* catalogue1, Appliance* applia
         }
     }
 }
+int checkQuantityInCatalogue(Catalogue* catalogue1, Appliance* appliance1){
+    int aux = 0;
+    for (int i = 0; i < catalogue1->amountOfElectrodomestics ; ++i) {
+        if(catalogue1->products[i]->model == appliance1->model){
+            aux = aux + 1;
+        }
+    }
+    return aux;
+}

@@ -22,6 +22,7 @@ void setDiscount(Catalogue* catalogue, int discount);
 float calculatePriceWithDiscount(Catalogue* catalogue, Appliance* electrodomestic);
 void addToCatalogue(Catalogue* catalogue, Appliance* electrodomestic);
 Appliance* removeApplianceFromCatalogue(Catalogue* catalogue1, Appliance* appliance1);
+int checkQuantityInCatalogue(Catalogue* catalogue1, Appliance* appliance1);
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_CATALOGUE_H
 
 

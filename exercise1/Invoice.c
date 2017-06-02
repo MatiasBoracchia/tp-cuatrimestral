@@ -4,7 +4,7 @@
 
 #include "Invoice.h"
 
-Invoice* createInvoice(char* id, float futurePayment){
+Invoice* createInvoice(int* id, float futurePayment){
     Invoice* invoice1 = malloc(sizeof(Invoice));
     invoice1->id = id;
     invoice1->futurePayment = futurePayment;

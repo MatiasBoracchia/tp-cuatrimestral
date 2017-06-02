@@ -3,18 +3,6 @@
 //
 #include "Provider.h"
 
-void providesProduct(Provider* provider, Catalogue* catalogue, Appliance* appliance, int quantity){
-    for (int i = 0; i < quantity ; ++i) {
-        if(checkQuantity(provider,appliance)>=quantity){
-            i = searchAndRemoveAppliance(provider,appliance)-1;
-        }else{
-            printf("The quantity asked is bigger than the products in stock");
-            return;
-        }
-    }
-}
-
-
 Provider* createProvider(char* name, char* description, char* location, char* city, char* phoneNumber, char* web, int maxAmountOfElectro){
     Provider* provider = malloc(sizeof(Provider));
     provider->web = web;
@@ -58,14 +46,15 @@ void supplyToShop(Provider* provider1, Shop* shop){
     if(provider1->amountOfElectrodomestics > shop->shopCatalogue->maxAmountOfElectrodomestics){
         printf("can not do \n");
     }else{
-        shop->shopCatalogue->products = provider1->products;
-        shop->shopCatalogue->amountOfElectrodomestics = provider1->amountOfElectrodomestics;
-        removeApplances(provider1);
+        for (int i = 0; i < provider1->amountOfElectrodomestics; ++i) {
+            shop->shopCatalogue->products[shop->shopCatalogue->amountOfElectrodomestics+i] = provider1->products[i];
+            //free(provider1->products[i]);
+        }
+        shop->shopCatalogue->amountOfElectrodomestics = shop->shopCatalogue->amountOfElectrodomestics + provider1->amountOfElectrodomestics;
+        //int* aux = provider1->amountOfElectrodomestics;
+        provider1->amountOfElectrodomestics = 0;
+//        for (int j = 0; j < aux; ++j) {
+//            free(provider1->products[j]);
+//        }
     }
-}
-void removeApplances(Provider* provider1){
-    for (int i = 0; i < provider1->amountOfElectrodomestics; ++i) {
-        free(provider1->products[i]);
-    }
-    provider1->amountOfElectrodomestics = 0;
 }
