@@ -7,6 +7,7 @@
 #include "exercise1/Manufacturer.c"
 #include "exercise1/Provider.c"
 #include "exercise1/Invoice.h"
+#include "exercise1/Shop.c"
 
 #include "exercise3/Library.c"
 #include "exercise3/Person.c"
@@ -42,7 +43,15 @@ int main() {
     supply(manufacturer1,provider1,20);
     supply(manufacturer2,provider1,10);
     supply(manufacturer1,provider1,10);
+
     printf("Quantity of %s %s is: %d \n",appliance1->name,appliance1->model,checkQuantity(provider1,appliance1));
+
+    Catalogue* catalogue1 = createCatalogue("1234567","Appliances",15,100);
+    Shop* shop1 = createShop(catalogue1,"PPP");
+    supplyToShop(provider1,shop1);
+
+    printf("Quantity of %s %s is: %d \n",appliance1->name,appliance1->model,checkQuantity(provider1,appliance1));
+
 
     printf("Appliance\t Model \t\t Price \n");
     printf("%s \t %s \t %.2f \n", appliance1->name, appliance1->model, appliance1->price);

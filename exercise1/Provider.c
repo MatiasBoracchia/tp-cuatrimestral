@@ -54,3 +54,17 @@ int checkQuantity(Provider* provider1, Appliance* appliance1){
     }
     return aux;
 }
+void supplyToShop(Provider* provider1, Shop* shop){
+    if(provider1->amountOfElectrodomestics > shop->shopCatalogue->maxAmountOfElectrodomestics){
+        printf("can not do \n");
+    }else{
+        shop->shopCatalogue->products = provider1->products;
+        removeApplances(provider1);
+    }
+}
+void removeApplances(Provider* provider1){
+    for (int i = 0; i < provider1->amountOfElectrodomestics; ++i) {
+        free(provider1->products[i]);
+    }
+    provider1->amountOfElectrodomestics = 0;
+}

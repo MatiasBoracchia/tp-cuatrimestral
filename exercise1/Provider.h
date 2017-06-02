@@ -7,6 +7,7 @@
 
 #include "Catalogue.h"
 #include "Appliance.h"
+#include "Shop.h"
 
 #ifndef TP_CUATRIMESTRAL_INDIVIDUAL_PROVIDER_H
 #define TP_CUATRIMESTRAL_INDIVIDUAL_PROVIDER_H
@@ -30,6 +31,8 @@ void providesProduct(Provider* provider, Catalogue* catalogue, Appliance* applia
 int searchAndRemoveAppliance(Provider* provider, Appliance* appliance);
 void reorder(Provider* provider, int position);
 int checkQuantity(Provider* provider1, Appliance* appliance1);
+void supplyToShop(Provider* provider1, Shop* shop);
+void removeApplances(Provider* provider1);
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_PROVIDER_H
 
 
