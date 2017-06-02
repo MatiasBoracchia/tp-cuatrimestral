@@ -30,6 +30,7 @@ void supply(Manufacturer* manufacturer, Provider* provider, int quantity){
         if(provider->amountOfElectrodomestics<provider->maxAmountofElectro){
             provider->products[provider->amountOfElectrodomestics] = appliance1;
             provider->amountOfElectrodomestics = provider->amountOfElectrodomestics + 1;
+            manufacturer->appliancesProduced = manufacturer->appliancesProduced+1;
         }
     }
 }

@@ -5,7 +5,12 @@
 
 void providesProduct(Provider* provider, Catalogue* catalogue, Appliance* appliance, int quantity){
     for (int i = 0; i < quantity ; ++i) {
-
+        if(checkQuantity(provider,appliance)>=quantity){
+            i = searchAndRemoveAppliance(provider,appliance)-1;
+        }else{
+            printf("The quantity asked is bigger than the products in stock");
+            return;
+        }
     }
 }
 
@@ -30,16 +35,22 @@ int searchAndRemoveAppliance(Provider* provider, Appliance* appliance){
         if(provider->products[i]->model = appliance->model){
             free(provider->products[i]);
             reorder(provider,i);
-            return 1;
+            return i;
         }
     }
-    return 0;
 }
 void reorder(Provider* provider, int position){
     if(provider->amountOfElectrodomestics != position){
         provider->products[position] = provider->products[provider->amountOfElectrodomestics-1];
         provider->amountOfElectrodomestics = provider->amountOfElectrodomestics -1;
     }
-
-
+}
+int checkQuantity(Provider* provider1, Appliance* appliance1){
+    int aux = 0;
+    for (int i = 0; i < provider1->amountOfElectrodomestics ; ++i) {
+        if(provider1->products[i]->model == appliance1->model){
+            aux = aux + 1;
+        }
+    }
+    return aux;
 }

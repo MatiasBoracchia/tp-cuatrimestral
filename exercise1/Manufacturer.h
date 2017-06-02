@@ -20,5 +20,4 @@ struct manufacturer{
 };
 Manufacturer* createManufacturer(char* name, char* description, char* location, char* city, char* phoneNumber, char* web, Appliance* applianceProduced);
 void supply(Manufacturer* manufacturer, Provider* provider, int quantity);
-
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_MANUFACTURER_H

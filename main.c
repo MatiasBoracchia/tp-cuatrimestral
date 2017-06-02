@@ -28,22 +28,33 @@
 
 
 int main() {
-    printf("//----------TP1---------//\n");
-    Appliance* E = createAppliance("Microwave","Samsung hx3",7100.0);
-    Manufacturer* manufacturer1 = createManufacturer("S-R","We worken","Buenos Aires","Bahia Blanca","15-3142-5967","www.s-r.come",E);
+    //PROBAR EL PROVIDER
+    //PROBAR EL PROVIDER
+    //PROBAR EL PROVIDER
+    //PROBAR EL PROVIDER
 
+    printf("//----------TP1---------//\n");
+    Appliance* appliance1 = createAppliance("Microwave","Samsung hx3",7100.0);
+    Appliance* appliance2 = createAppliance("Freezer","Whirlpool",16000);
+    Manufacturer* manufacturer1 = createManufacturer("S-R","We worken","Bahia Blanca","Buenos Aires","15-3142-5967","www.s-r.come",appliance1);
+    Manufacturer* manufacturer2 = createManufacturer("Manu","We also worken","Junin","Buenos Aires","15-7894-1234","www.elmanu.com",appliance2);
+    Provider* provider1 = createProvider("Proveedor47","El mejor por lejos","La Plata","Buenos Aires","15-3178-0039","www.proveedor47.com",200);
+    supply(manufacturer1,provider1,20);
+    supply(manufacturer2,provider1,10);
+    supply(manufacturer1,provider1,10);
+    printf("Quantity of %s %s is: %d \n",appliance1->name,appliance1->model,checkQuantity(provider1,appliance1));
 
     printf("Appliance\t Model \t\t Price \n");
-    printf("%s \t %s \t %.2f \n", E->name, E->model, E->price);
+    printf("%s \t %s \t %.2f \n", appliance1->name, appliance1->model, appliance1->price);
 
-    setPrice(E,6500.0);
-    printf("%s \t %s \t %.2f \n", E->name, E->model, E->price);
+    setPrice(appliance1,6500.0);
+    printf("%s \t %s \t %.2f \n", appliance1->name, appliance1->model, appliance1->price);
 
     Catalogue* C= createCatalogue("12CWE345","Kitchen Products",0,20);
-    addToCatalogue(C,E);
+    addToCatalogue(C,appliance1);
     setDiscount(C,5);
-    float price = calculatePriceWithDiscount(C,E);
-    printf("The new price of %s with discunt %d is %.2f \n",E->name,C->discount,price);
+    float price = calculatePriceWithDiscount(C,appliance1);
+    printf("The new price of %s with discunt %d is %.2f \n",appliance1->name,C->discount,price);
 
     Provider* P= createProvider("Provider X2","Provider X2 is a company that specialices in...","Buenos Aires","Chacarita","15-4140-1247","www.providerx2.com",25);
 
