@@ -21,7 +21,7 @@ Catalogue* createCatalogue(char* id, char* name,int discount,int maxAmountOfElec
 void setDiscount(Catalogue* catalogue, int discount);
 float calculatePriceWithDiscount(Catalogue* catalogue, Appliance* electrodomestic);
 void addToCatalogue(Catalogue* catalogue, Appliance* electrodomestic);
-void addToCart(Catalogue* catalogue,Cart* cart, int numberOnTheCatalogue);
+Appliance* removeApplianceFromCatalogue(Catalogue* catalogue1, Appliance* appliance1);
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_CATALOGUE_H
 
 

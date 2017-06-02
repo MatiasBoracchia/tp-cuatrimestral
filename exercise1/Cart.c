@@ -14,3 +14,8 @@ Cart* createCart(char* id, float total,int maxAppliances) {
     
     return result;
 }
+Invoice* generateInvoice(Cart* cart){
+    int id = rand()%10000+1000;
+    Invoice* invoice1 = createInvoice(id,cart->total);
+    return invoice1;
+}

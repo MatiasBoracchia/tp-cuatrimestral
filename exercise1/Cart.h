@@ -17,7 +17,6 @@ struct cart{
     int maxAppliances;
 
 };
-float calculateTotal(Cart* cart);
 Invoice* generateInvoice(Cart* cart);
 Cart* createCart(char* id, float total, int maxAppliances);
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_CART_H

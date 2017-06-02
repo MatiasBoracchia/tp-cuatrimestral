@@ -31,8 +31,12 @@ void addToCatalogue(Catalogue* catalogue, Appliance* electrodomestic){
     }
 }
 
-void addToCart(Catalogue* catalogue,Cart* cart, int numberOnTheCatalogue){
-    Appliance* appliance1 = catalogue->products[numberOnTheCatalogue];
-    cart->appliances[cart->amountOfAppliances] =  appliance1;
-    
+Appliance* removeApplianceFromCatalogue(Catalogue* catalogue1, Appliance* appliance1){
+    for (int i = 0; i < catalogue1->amountOfElectrodomestics ; ++i) {
+        if(catalogue1->products[i]->model == appliance1->model){
+            Appliance* appliance2 = catalogue1->products[i];
+            free(catalogue1->products[i]);
+            catalogue1->amountOfElectrodomestics = catalogue1->amountOfElectrodomestics-1;
+        }
+    }
 }

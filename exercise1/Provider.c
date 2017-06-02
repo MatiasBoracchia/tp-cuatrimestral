@@ -59,6 +59,7 @@ void supplyToShop(Provider* provider1, Shop* shop){
         printf("can not do \n");
     }else{
         shop->shopCatalogue->products = provider1->products;
+        shop->shopCatalogue->amountOfElectrodomestics = provider1->amountOfElectrodomestics;
         removeApplances(provider1);
     }
 }
