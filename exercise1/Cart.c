@@ -4,7 +4,7 @@
 
 #include "Cart.h"
 
-Cart* createCart(char* id,int maxAppliances) {
+Cart* createCart(int id,int maxAppliances) {
     Cart *result = malloc(sizeof(Cart));
     result->maxAppliances = maxAppliances;
     result->amountOfAppliances = 0;
@@ -14,7 +14,7 @@ Cart* createCart(char* id,int maxAppliances) {
     return result;
 }
 Invoice* generateInvoice(Cart* cart){
-    int* id = rand()%10000+1000;
+    int id = (int)(rand()%10000+1000);
     Invoice* invoice1 = createInvoice(id,cart->total);
     return invoice1;
 }

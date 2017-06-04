@@ -5,13 +5,14 @@
 #include "Loan.h"
 
 double charge(Loan* loan){
-    return loan->daysKept * loan->charge;
+    double aux = loan->daysKept * loan->charge;
+    return aux;
 }
-Loan* createLoan(char* code, char* exitDate, double charge, int daysKept){
+Loan* createLoan(int code, char* exitDate, double charge){
     Loan* loan = malloc(sizeof(Loan));
     loan->charge=charge;
     loan->code = code;
-    loan->daysKept=daysKept;
+    loan->daysKept=0;
     loan->exitDate = exitDate;
 
     return loan;

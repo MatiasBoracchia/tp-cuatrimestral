@@ -7,12 +7,12 @@
 
 typedef struct loan Loan;
 struct loan{
-    char* code;
+    int code;
     char* exitDate;
     double charge;
     int daysKept;
 };
-Loan* createLoan(char* code, char* exitDate, double charge, int daysKept);
+Loan* createLoan(int code, char* exitDate, double charge);
 double charge(Loan* loan);
 
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_LOAN_H

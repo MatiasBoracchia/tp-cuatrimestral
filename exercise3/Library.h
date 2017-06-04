@@ -21,5 +21,6 @@ struct library{
 Library* createLibrary(int maxCapacityMaterials, int maxCapacityPeople);
 void addPerson(Library* library, Person* person);
 void addMaterial(Library* library, Material* material);
+void libraryInfo(Library* library1);
 
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_LIBRARY_H

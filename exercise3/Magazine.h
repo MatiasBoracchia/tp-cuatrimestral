@@ -1,6 +1,7 @@
 //
 // Created by Usuario on 30-May-17.
 //
+#include <stdlib.h>
 #include "Material.h"
 #ifndef TP_CUATRIMESTRAL_INDIVIDUAL_MAGAZINE_H
 #define TP_CUATRIMESTRAL_INDIVIDUAL_MAGAZINE_H

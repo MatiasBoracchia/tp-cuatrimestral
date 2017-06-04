@@ -32,3 +32,8 @@ Library* createLibrary(int maxCapacityMaterials, int maxCapacityPeople){
 
     return library;
 }
+void libraryInfo(Library* library1){
+    for (int i = 0; i < library1->numberOfMaterials; ++i) {
+        printf("The %s %s is %s \n",library1->material[i]->bookOrMagazine,library1->material[i]->title, library1->material[i]->status);
+    }
+}

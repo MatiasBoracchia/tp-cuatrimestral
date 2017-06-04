@@ -24,6 +24,6 @@ Material* createMaterial(char* type, char* code, char* author, char* title, char
     material1->title = title;
     material1->status = status;
     material1->year = year;
-
+    material1->bookOrMagazine = "Not Defined";
     return material1;
 }

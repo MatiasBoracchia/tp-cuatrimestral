@@ -8,7 +8,8 @@ typedef struct professor Professor;
 
 struct professor{
     int employeeNumber;
+    Person* person;
 };
 
-Professor* createProfessor( int employeeNumber);
+Professor* createProfessor( int employeeNumber, Person* person);
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_PROFESSOR_H

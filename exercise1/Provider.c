@@ -51,7 +51,7 @@ void supplyToShop(Provider* provider1, Shop* shop){
             //free(provider1->products[i]);
         }
         shop->shopCatalogue->amountOfElectrodomestics = shop->shopCatalogue->amountOfElectrodomestics + provider1->amountOfElectrodomestics;
-        //int* aux = provider1->amountOfElectrodomestics;
+        //int aux = provider1->amountOfElectrodomestics;
         provider1->amountOfElectrodomestics = 0;
 //        for (int j = 0; j < aux; ++j) {
 //            free(provider1->products[j]);

@@ -5,43 +5,35 @@
 
 #include "Person.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-void takeMaterial(Person* person, Material* material, Loan* loan, char date[10]){
+Loan* takeMaterial(Person* person, Material* material, char* date){
     person->numberOfBooks = person->numberOfBooks +1;
-    material->status = "taken";
-    loan->exitDate = date;
-
+    material->status = "Taken";
+    int code = (int)(rand()%10000);
+    Loan* loan1 = createLoan(code,date,20);
+    return loan1;
 }
 void returnMaterial(Person* person, Material* material, Loan* loan, int daysKept){
-    material->status = "available";
+    material->status = "Available";
     if(person->numberOfBooks >0){
         person->numberOfBooks = person->numberOfBooks-1;
     }//else error
     loan->daysKept = daysKept;
-    double debt = charge(loan);
-    double actualDebt = person->debt;
-    double sum = actualDebt+debt;
-    person->debt = sum;
+    double charge1 = charge(loan);
+    person->debt = person->debt + charge1;
 
 }
-Person* createPerson(char* type, char* name, char* surname, char* mail, char* telephone, int numberOfBooks, double debt, Student* student, Professor* professor){
+Person* createPerson(char* name, char* surname, char* mail, char* telephone, int maxNumberOfBooks){
     Person* person1 = malloc(sizeof(Person));
-    person1->type = type;
     person1->name = name;
     person1->surname = surname;
     person1->mail = mail;
     person1->telephone = telephone;
-    person1->numberOfBooks = numberOfBooks;
-    person1->debt = debt;
-    if(student==NULL){
-        person1->professor = malloc(sizeof(Professor));
-        person1->professor = professor;
-    }
-    if(professor==NULL){
-        person1->student = malloc(sizeof(Student));
-        person1->student = student;
-    }
-
+    person1->debt = 0.0;
+    person1->numberOfBooks = 0;
+    person1->maxNumberOfBooks = maxNumberOfBooks;
+    person1->books = malloc(sizeof(Book*)*maxNumberOfBooks);
+    person1->studentOrProfessor = "Not Defined";
     return person1;
 }
+
+

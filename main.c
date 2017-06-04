@@ -16,6 +16,8 @@
 #include "exercise3/Material.c"
 #include "exercise3/Book.c"
 #include "exercise3/Student.c"
+#include "exercise3/Magazine.c"
+#include "exercise3/Professor.c"
 
 #include "exercise4/Recepcionist.c"
 #include "exercise4/Client.c"
@@ -30,11 +32,8 @@
 
 
 int main() {
-    //PROBAR EL PROVIDER
-    //PROBAR EL PROVIDER
-    //PROBAR EL PROVIDER
-    //PROBAR EL PROVIDER
 
+/*
     printf("//----------TP1---------//\n");
     Appliance* appliance1 = createAppliance("Microwave","Samsung hx3",7100.0);
     Appliance* appliance2 = createAppliance("Freezer","Whirlpool",16000);
@@ -62,59 +61,54 @@ int main() {
     cartInfo(cart1);
     Invoice* invoice1 = generateInvoice(cart1);
     payInvoice(invoice1); //CORREGIR ESTE METODO
-
-
-    //addToCart(shop1,cart1,appliance1,3);
-
-    /*printf("Appliance\t Model \t\t Price \n");
-    printf("%s \t %s \t %.2f \n", appliance1->name, appliance1->model, appliance1->price);
-
-    setPrice(appliance1,6500.0);
-    printf("%s \t %s \t %.2f \n", appliance1->name, appliance1->model, appliance1->price);
-
-    Catalogue* C= createCatalogue("12CWE345","Kitchen Products",0,20);
-    addToCatalogue(C,appliance1);
-    setDiscount(C,5);
-    float price = calculatePriceWithDiscount(C,appliance1);
-    printf("The new price of %s with discunt %d is %.2f \n",appliance1->name,C->discount,price);
-
-    Provider* P= createProvider("Provider X2","Provider X2 is a company that specialices in...","Buenos Aires","Chacarita","15-4140-1247","www.providerx2.com",25);
 */
 
- /*   //----------TP2---------//
+
+
+
+    //----------TP2---------//
 
 
     printf("//----------TP3---------//\n");
 
 
-    Material* material = createMaterial("Fanatsy","ABCD123","Rowlig","Harry Potter","Availabel",1997);
-    Book* book1 = createBook(material,"Santillana");
-    Student* student1 = createStudent(4004);
+    Material* material1 = createMaterial("Fanatsy","ABCD123","Rowling","Harry Potter 1","Available",1997);
+    Material* material2 = createMaterial("Fanatsy","ABCD124","Rowling","Harry Potter 2","Available",1998);
+    Material* material3 = createMaterial("Fanatsy","ABCD125","Rowling","Harry Potter 3","Available",1999);
+    Material* material4 = createMaterial("Fashion","ABC126","People","Summer 2016","Available",2016);
 
-    Person* person1 = createPerson("Student","Juan","Lagos","juan@gmail.com","15-4142-2589",0,0.0,student1,NULL);
+    Book* book1 = createBook(material1,"Santillana");
+    Book* book2 = createBook(material2,"Santillana");
+    Book* book3 = createBook(material3,"Santillana");
+    Magazine* magazine1 = createMagazine(material4);
 
-    Loan* loan1 = createLoan("XYZ987","",10.0,1);
+    Person* person1 = createPerson("Juan","Lagos","juan@gmail.com","15-4142-2589",15);
+    Person* person2 = createPerson("Nicolas","Tagliafico","nicotagliafico3@gmail.com","15-4921-0666",20);
+
+    Student* student1 = createStudent(4004,person1);
+    Professor* professor1 = createProfessor(103683,person2);
+
     Library* library1 = createLibrary(100,100);
-
-    takeMaterial(person1, book1->material, loan1, "23/5/2017");
-    returnMaterial(person1, book1->material, loan1, 2);
-
-
-    printf("The %s debt is: %.2f \n", person1->type, person1->debt);
-
-
-    addMaterial(library1,book1->material);
     addPerson(library1,person1);
-    printf("The amount of books in the library is: %d \n",library1->numberOfMaterials);
-    printf("The amount of people in the library is: %d  \n",library1->numberOfPeople);
+    addPerson(library1,person2);
+    addMaterial(library1,material1);
+    addMaterial(library1,material2);
+    addMaterial(library1,material3);
+    addMaterial(library1,material4);
+
+    Loan* loan1 = takeMaterial(person1,material1,"12/10/2016");
+    Loan* loan2 = takeMaterial(person1,material1,"13/10/2016");
+    Loan* loan3 = takeMaterial(person1,material2,"13/10/2016");
+    Loan* loan4 = takeMaterial(person2,material4,"13/10/2016");
+    libraryInfo(library1);
+    returnMaterial(person1,material1,loan1,3);
+    returnMaterial(person2,material4,loan4,1);
+    libraryInfo(library1);
 
 
 
-    for (int i = 0; i < library1->numberOfMaterials; ++i) {
-        printf("Info of material: %s,%s \n ",library1->material[i]->title,library1->material[i]->status);
-    }
 
-
+/*
     printf("//----------TP4---------//\n");
 
     Recepcionist* recepcionist = createRecepcionist("Juana","Rios",20,444);

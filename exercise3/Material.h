@@ -13,6 +13,7 @@ struct material{
     char* title;
     char* status;
     int year;
+    char* bookOrMagazine;
 };
 
 Material* createMaterial(char* type, char* code, char* author, char* title, char* status, int year);

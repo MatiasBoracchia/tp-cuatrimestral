@@ -8,6 +8,7 @@ Book* createBook(Material* material, char* publisher){
     book1->material = malloc(sizeof(Material));
     book1->material = material;
     book1->publisher = publisher;
+    material->bookOrMagazine = "Magazine";
 
     return book1;
 }

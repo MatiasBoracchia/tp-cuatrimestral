@@ -9,7 +9,8 @@ typedef struct student Student;
 
 struct student{
     int id;
+    Person* person1;
 };
 
-Student* createStudent(int id);
+Student* createStudent(int id, Person* person1);
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_STUDENT_H

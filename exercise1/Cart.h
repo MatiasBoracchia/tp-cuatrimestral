@@ -10,7 +10,7 @@
 #include "Appliance.h"
 typedef struct cart Cart;
 struct cart{
-    int* id;
+    int id;
     float total;
     Appliance** appliances;
     int amountOfAppliances;
@@ -18,7 +18,7 @@ struct cart{
 
 };
 Invoice* generateInvoice(Cart* cart);
-Cart* createCart(char* id, int maxAppliances);
+Cart* createCart(int id, int maxAppliances);
 void cartInfo(Cart* cart1);
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_CART_H
 
