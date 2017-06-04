@@ -18,3 +18,9 @@ Invoice* generateInvoice(Cart* cart){
     Invoice* invoice1 = createInvoice(id,cart->total);
     return invoice1;
 }
+void cartInfo(Cart* cart1){
+    printf("Cart id: %d, total: %.2f \n",cart1->id, cart1->total);
+    for (int i = 0; i < cart1->amountOfAppliances; ++i) {
+        printf("Product: %d \t %s \n",i+1,cart1->appliances[i]->model);
+    }
+}

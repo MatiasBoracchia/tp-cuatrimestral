@@ -54,10 +54,16 @@ int main() {
 
     printf("Quantity of %s %s of Provider is: %d \n",appliance1->name,appliance1->model,checkQuantity(provider1,appliance1));
     printf("Quantity registered of %s %s of Provider is: %d \n",appliance1->name,appliance1->model,provider1->amountOfElectrodomestics);
-
-    Cart* cart1 = createCart("myCart003",10);
     printf("Amount of %s %s of Shopis %d \n",appliance1->name,appliance1->model,checkQuantityInCatalogue(shop1->shopCatalogue,appliance1));
     printf("Amount of Electro in Shop is %d \n",shop1->shopCatalogue->amountOfElectrodomestics);
+    Cart* cart1 = createCart("myCart003",10);
+    cartInfo(cart1);
+    addToCart(shop1,cart1,appliance1,2);
+    cartInfo(cart1);
+    Invoice* invoice1 = generateInvoice(cart1);
+    payInvoice(invoice1); //CORREGIR ESTE METODO
+
+
     //addToCart(shop1,cart1,appliance1,3);
 
     /*printf("Appliance\t Model \t\t Price \n");

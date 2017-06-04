@@ -9,3 +9,9 @@ Invoice* createInvoice(int* id, float futurePayment){
     invoice1->id = id;
     invoice1->futurePayment = futurePayment;
 }
+void payInvoice(Invoice* invoice1){
+    printf("Invoice was payed \n");
+    //free(invoice1->id);
+    //free(invoice1->futurePayment);
+    //free(invoice1);
+}

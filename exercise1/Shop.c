@@ -19,7 +19,7 @@ void addToCart(Shop* shop1, Cart* cart1, Appliance* appliance1,int quantity){
             cart1->appliances[cart1->amountOfAppliances] = removeApplianceFromCatalogue(shop1->shopCatalogue,appliance1);
             cart1->amountOfAppliances = cart1->amountOfAppliances + 1;
             float priceOfApplianceWithDiscount = calculatePriceWithDiscount(shop1->shopCatalogue,appliance1);
-            cart1->total = cart1->total + priceOfApplianceWithDiscount;
+            cart1->total = (float)(cart1->total + priceOfApplianceWithDiscount);
         }else{
             printf("NO MORE APPLIANCE");
         }

@@ -19,6 +19,7 @@ struct cart{
 };
 Invoice* generateInvoice(Cart* cart);
 Cart* createCart(char* id, int maxAppliances);
+void cartInfo(Cart* cart1);
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_CART_H
 
 

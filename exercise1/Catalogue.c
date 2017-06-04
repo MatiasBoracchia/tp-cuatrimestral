@@ -35,8 +35,9 @@ Appliance* removeApplianceFromCatalogue(Catalogue* catalogue1, Appliance* applia
     for (int i = 0; i < catalogue1->amountOfElectrodomestics ; ++i) {
         if(catalogue1->products[i]->model == appliance1->model){
             Appliance* appliance2 = catalogue1->products[i];
-            free(catalogue1->products[i]);
+            //free(catalogue1->products[i]);
             catalogue1->amountOfElectrodomestics = catalogue1->amountOfElectrodomestics-1;
+            return appliance2;
         }
     }
 }
