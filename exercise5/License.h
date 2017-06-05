@@ -11,4 +11,5 @@ struct license{
     Customer* customer;
 };
 License* createLicense(int licenseId, Customer* customer);
+
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_LICENSE_H

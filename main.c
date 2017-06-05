@@ -134,12 +134,12 @@ int main() {
 
     printf("//----------TP5---------//\n");
 
-    Customer* customer = createCustomer("Francisco","Garcia", 47897,10);
+    Customer* customer = createCustomer("Hernan","Shu", 47897,10);
     Administrator* admin = createAdmin("Esteban", "Lauri", 12345, 20);
     registerCustomer(admin,customer);
     Rent* rent1 = createRent("Block Buster",50);
 
-    Movie* movie1 = createMovie("Guardianes de la Galaxia 2",2017,1);
+    Movie* movie1 = createMovie("Guardians of the Galaxy 2",2017,1);
     Movie* movie2 = createMovie("Gladiator",2000,0);
     Movie* movie3 = createMovie("Logan",2017,1);
     Movie* movie4 = createMovie("Wonder Women",2017,1);
@@ -151,10 +151,12 @@ int main() {
     addMovie(movie5,rent1);
     rentInformation(rent1);
     rentMovie(customer,rent1,movie2);
-    printf("Customer movie: %s \n",customer->rentedMOvies[0]->name);
-    rentInformation(rent1);
+    rentMovie(customer,rent1,movie4);
+    moviesRented(customer);
+    availableMovies(rent1);
+    moviePremieres(rent1);
 
-
+//FALTA EL RETURNMOVIE() Y Q HACER CON SURPLUS
 
 
 

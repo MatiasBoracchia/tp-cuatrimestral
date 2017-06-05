@@ -15,3 +15,9 @@ Customer* createCustomer(char* name, char* surname, int id, int maxAmountOfRente
 
     return customer;
 }
+void moviesRented(Customer* customer1){
+    printf("Movies that %s %s rented: \n",customer1->name,customer1->surname);
+    for (int i = 0; i < customer1->amountOfRentedMOvies; ++i) {
+        printf("%s \n",customer1->rentedMOvies[i]->name);
+    }
+}

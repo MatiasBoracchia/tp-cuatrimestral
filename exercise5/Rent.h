@@ -17,6 +17,8 @@ Rent* createRent(char* name, int maxAmountOfMovies);
 void rentMovie(Customer* customer, Rent* rent1,Movie* movie);
 void addMovie(Movie* movie1, Rent* rent1);
 void rentInformation(Rent* rent1);
+int availableMovies(Rent* rent);
+int moviePremieres(Rent* rent1);
 int checkForAvailability();
 char checkNewMovies();
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_RENT_H

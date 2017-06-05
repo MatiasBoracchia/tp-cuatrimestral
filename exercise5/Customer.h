@@ -15,5 +15,5 @@ struct customer{
 
 };
 Customer* createCustomer(char* name, char* surname, int id, int amountOfRentedMOvies);
-void watchMovie();
+void moviesRented(Customer* customer1);
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_CUSTOMER_H

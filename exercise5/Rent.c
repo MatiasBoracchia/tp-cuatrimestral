@@ -14,7 +14,7 @@ Rent* createRent(char* name, int maxAmountOfMovies){
 }
 void rentMovie(Customer * customer1, Rent* rent1, Movie* movie){
     for (int i = 0; i < rent1->amountOfMovies; ++i) {
-        if(rent1->movies[i]->name == movie->name){
+        if(rent1->movies[i]->name == movie->name && rent1->movies[i]->status != "Rented"){
             rent1->movies[i]->status = "Rented";
             break;
         }
@@ -32,4 +32,25 @@ void rentInformation(Rent* rent1){
         printf("Movie: %s is %s\n",rent1->movies[i]->name,rent1->movies[i]->status);
 
     }
+}
+int availableMovies(Rent* rent){
+    int aux = 0;
+    printf("Available movies: \n");
+    for (int i = 0; i < rent->amountOfMovies; ++i) {
+        if(rent->movies[i]->status == "Available"){
+            aux = aux + 1;
+            printf("%s \n",rent->movies[i]->name);
+        }
+    }
+}
+int moviePremieres(Rent* rent1){
+    int aux = 0;
+    printf("Movie premieres: \n");
+    for (int i = 0; i < rent1->amountOfMovies; ++i) {
+        if(rent1->movies[i]->isNew==1){
+            aux = aux +1;
+            printf("%s \n",rent1->movies[i]->name);
+        }
+    }
+    return aux;
 }
