@@ -10,6 +10,7 @@ struct movie{
     int year;
     int isNew;
     char* status;
+
 };
 Movie* createMovie(char* name, int year, int isNew);
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_MOVIE_H

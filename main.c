@@ -149,9 +149,10 @@ int main() {
     addMovie(movie3,rent1);
     addMovie(movie4,rent1);
     addMovie(movie5,rent1);
-    rentMovie(customer,rent1,movie5);
-    printf("amout of clients: %d \n",admin->amountOfCustomers);
-    printf("Name of Customer in admin: %s \n",admin->customers[0]->name);
+    rentInformation(rent1);
+    rentMovie(customer,rent1,movie2);
+    printf("Customer movie: %s \n",customer->rentedMOvies[0]->name);
+    rentInformation(rent1);
 
 
 
