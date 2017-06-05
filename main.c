@@ -27,9 +27,9 @@
 #include "exercise5/Administrator.c"
 #include "exercise5/Customer.c"
 #include "exercise5/License.c"
-#include "exercise5/Rent.h"
+#include "exercise5/Rent.c"
 #include "exercise5/Surplus.h"
-
+#include "exercise5/Movie.c"
 
 int main() {
 
@@ -132,18 +132,26 @@ int main() {
 
 
 
-       printf("//----------TP5---------//\n");
+    printf("//----------TP5---------//\n");
 
-       License* license1 = createLicense(4444);
+    Customer* customer = createCustomer("Francisco","Garcia", 47897,10);
+    Administrator* admin = createAdmin("Esteban", "Lauri", 12345, 20);
+    registerCustomer(admin,customer);
+    Rent* rent1 = createRent("Block Buster",50);
 
-       Customer* customer = createCustomer("Francisco","Garcia", 47897,license1);
-
-       Administrator* admin = createAdmin("Esteban", "Lauri", 12345, 20);
-
-       registerCustomer(admin,customer);
-
-       printf("amout of clients: %d \n",admin->amountOfCustomers);
-       printf("Name of Customer in admin: %s \n",admin->customers[0]->name);
+    Movie* movie1 = createMovie("Guardianes de la Galaxia 2",2017,1);
+    Movie* movie2 = createMovie("Gladiator",2000,0);
+    Movie* movie3 = createMovie("Logan",2017,1);
+    Movie* movie4 = createMovie("Wonder Women",2017,1);
+    Movie* movie5 = createMovie("Thor",2011,0);
+    addMovie(movie1,rent1);
+    addMovie(movie2,rent1);
+    addMovie(movie3,rent1);
+    addMovie(movie4,rent1);
+    addMovie(movie5,rent1);
+    rentMovie(customer,rent1,movie5);
+    printf("amout of clients: %d \n",admin->amountOfCustomers);
+    printf("Name of Customer in admin: %s \n",admin->customers[0]->name);
 
 
 
