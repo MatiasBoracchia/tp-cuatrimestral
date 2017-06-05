@@ -17,5 +17,4 @@ struct invoice2{
     double debt;
 };
 Invoice2* createInvoice2(char* hotelName, char* clientName, char* clientSurname, int clientId, double debt, int invoiceId);
-void payForRoom(Invoice2* invoice, Client* client, Room* room);
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_INVOICE2_H

@@ -4,13 +4,13 @@
 
 #include "Client.h"
 
-void makeReservation(Client* client, Recepcionist* recepcionist, int number){
-    if(recepcionist->rooms[number]->status == "Available"){
-        recepcionist->rooms[number]->status = "reserved";
-        recepcionist->roomsOccupied = recepcionist->roomsOccupied + 1;
-        printf("Room was reserved");
+void makeReservation(Client* client, Receptionist* receptionist, int number){
+    if(receptionist->rooms[number]->status == "Available"){
+        receptionist->rooms[number]->status = "Reserved";
+        receptionist->roomsOccupied = receptionist->roomsOccupied + 1;
+        printf("Room was reserved \n");
     }else{
-        printf("The room: %d is %s \n",number,recepcionist->rooms[number]->status);
+        printf("The room: %d is %s \n",number,receptionist->rooms[number]->status);
         return;
     }
 
@@ -23,4 +23,9 @@ Client* createClient(char* name, char* surname, int id){
     client->name = name;
 
     return client;
+}
+Invoice2* payForRoom(Client* client, Room* room){
+    Invoice2* invoice2 = createInvoice2("Paquitos",client->name,client->surname,client->id,100,20657);
+    room->status = "Occupied";
+    return invoice2;
 }

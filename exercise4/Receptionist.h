@@ -6,8 +6,9 @@
 #define TP_CUATRIMESTRAL_INDIVIDUAL_RECEPCIONIST_H
 
 #include "Room.h"
-typedef struct recepcionist Recepcionist;
-struct recepcionist{
+//CAMBIAR NOMBRE A RECEPTIONIST, no funciona el refactor
+typedef struct receptionist Receptionist;
+struct receptionist{
     char* name;
     char* surname;
     Room** rooms;
@@ -16,6 +17,6 @@ struct recepcionist{
     int id;
 };
 
-Recepcionist* createRecepcionist(char* name, char* surname,int maxCapacity,int id);
-void giveInformation(Recepcionist* recepcionist);
+Receptionist* createReceptionist(char* name, char* surname,int maxCapacity,int id);
+void giveInformation(Receptionist* receptionist);
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_RECEPCIONIST_H

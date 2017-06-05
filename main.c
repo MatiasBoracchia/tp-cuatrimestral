@@ -19,7 +19,7 @@
 #include "exercise3/Magazine.c"
 #include "exercise3/Professor.c"
 
-#include "exercise4/Recepcionist.c"
+#include "exercise4/Receptionist.c"
 #include "exercise4/Client.c"
 #include "exercise4/Invoice2.c"
 
@@ -69,6 +69,7 @@ int main() {
     //----------TP2---------//
 
 
+/*
     printf("//----------TP3---------//\n");
 
 
@@ -104,47 +105,48 @@ int main() {
     returnMaterial(person1,material1,loan1,3);
     returnMaterial(person2,material4,loan4,1);
     libraryInfo(library1);
+    deleteMaterial(material3);
+    libraryInfo(library1);
 
-
+*/
 
 
 /*
+
     printf("//----------TP4---------//\n");
 
-    Recepcionist* recepcionist = createRecepcionist("Juana","Rios",20,444);
+    Receptionist* recepcionist = createReceptionist("Juana","Rios",20,444);
 
     giveInformation(recepcionist);
     Client* client = createClient("Lorenzo","Rojas",1230);
-
+    Client* client2 = createClient("Dario","Benedeto",2302);
     makeReservation(client,recepcionist, 0);
+    makeReservation(client2,recepcionist,0);
+    makeReservation(client2,recepcionist,1);
 
+    Invoice2* invoice1 =payForRoom(client,recepcionist->rooms[0]);
 
-    Invoice* invoice1 =createInvoice("Paquitos",client->name,client->surname,client->id,10,898);
-    //payForRoom(invoice1,client,recepcionist,);
-    //printf("Invoice: %d \t %s \t %s \n",invoice1->id,invoice1->clientName,room.status);
     giveInformation(recepcionist);
 
-    printf("//----------TP5---------//\n");
-
-    License* license1 = createLicense(4444);
-
-    Customer* customer = createCustomer("Francisco","Garcia", 47897,license1);
-
-    Administrator* admin = createAdmin("Esteban", "Lauri", 12345, 20);
-
-    registerCustomer(admin,customer);
-
-    printf("amout of clients: %d \n",admin->amountOfCustomers);
-    printf("Name of Customer in admin: %s \n",admin->customers[0]->name);
-
-
-
-
-
-
-
-
 */
+
+
+
+       printf("//----------TP5---------//\n");
+
+       License* license1 = createLicense(4444);
+
+       Customer* customer = createCustomer("Francisco","Garcia", 47897,license1);
+
+       Administrator* admin = createAdmin("Esteban", "Lauri", 12345, 20);
+
+       registerCustomer(admin,customer);
+
+       printf("amout of clients: %d \n",admin->amountOfCustomers);
+       printf("Name of Customer in admin: %s \n",admin->customers[0]->name);
+
+
+
 
 
 
