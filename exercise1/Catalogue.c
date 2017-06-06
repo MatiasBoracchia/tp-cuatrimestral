@@ -30,12 +30,15 @@ void addToCatalogue(Catalogue* catalogue, Appliance* electrodomestic){
         catalogue->amountOfElectrodomestics = catalogue->amountOfElectrodomestics +1;
     }
 }
-
+//cambio realizdo aca
 Appliance* removeApplianceFromCatalogue(Catalogue* catalogue1, Appliance* appliance1){
     for (int i = 0; i < catalogue1->amountOfElectrodomestics ; ++i) {
         if(catalogue1->products[i]->model == appliance1->model){
-            Appliance* appliance2 = catalogue1->products[i];
-            //free(catalogue1->products[i]);
+            Appliance* appliance2 = createAppliance(catalogue1->products[i]->name,catalogue1->products[i]->model,catalogue1->products[i]->price);
+            destroyAppliance(catalogue1->products[i]);
+            for (int j = i; j < catalogue1->amountOfElectrodomestics -1; ++j) {
+                catalogue1->products[j] = catalogue1->products[j+1];
+            }
             catalogue1->amountOfElectrodomestics = catalogue1->amountOfElectrodomestics-1;
             return appliance2;
         }

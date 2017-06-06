@@ -23,10 +23,6 @@ Manufacturer* createManufacturer(char* name, char* description, char* location, 
 void supply(Manufacturer* manufacturer, Provider* provider, int quantity){
     for (int i = 0; i < quantity ; ++i) {
         Appliance* appliance1 = createAppliance( manufacturer->applianceProduced->name,manufacturer->applianceProduced->model,manufacturer->applianceProduced->price);
-        appliance1->tag = manufacturer->applianceProduced->tag;
-        appliance1->model = manufacturer->applianceProduced->model;
-        appliance1->name = manufacturer->applianceProduced->name;
-        appliance1->price = manufacturer->applianceProduced->price;
         if(provider->amountOfElectrodomestics<provider->maxAmountofElectro){
             provider->products[provider->amountOfElectrodomestics] = appliance1;
             provider->amountOfElectrodomestics = provider->amountOfElectrodomestics + 1;

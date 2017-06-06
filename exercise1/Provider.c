@@ -21,17 +21,17 @@ Provider* createProvider(char* name, char* description, char* location, char* ci
 int searchAndRemoveAppliance(Provider* provider, Appliance* appliance){
     for (int i = 0; i < provider->amountOfElectrodomestics; ++i) {
         if(provider->products[i]->model = appliance->model){
-            free(provider->products[i]);
+            destroyAppliance(provider->products[i]);
             reorder(provider,i);
             return i;
         }
     }
 }
 void reorder(Provider* provider, int position){
-    if(provider->amountOfElectrodomestics != position){
-        provider->products[position] = provider->products[provider->amountOfElectrodomestics-1];
-        provider->amountOfElectrodomestics = provider->amountOfElectrodomestics -1;
+    for (int i = position; i < provider->amountOfElectrodomestics -1; ++i) {
+        provider->products[i] = provider->products[i+1];
     }
+    provider->amountOfElectrodomestics = provider->amountOfElectrodomestics -1;
 }
 int checkQuantity(Provider* provider1, Appliance* appliance1){
     int aux = 0;
@@ -47,6 +47,7 @@ void supplyToShop(Provider* provider1, Shop* shop){
         printf("can not do \n");
     }else{
         for (int i = 0; i < provider1->amountOfElectrodomestics; ++i) {
+            //printf("The product %d is: %s \n",i, provider1->products[i]->model);
             shop->shopCatalogue->products[shop->shopCatalogue->amountOfElectrodomestics+i] = provider1->products[i];
             //free(provider1->products[i]);
         }

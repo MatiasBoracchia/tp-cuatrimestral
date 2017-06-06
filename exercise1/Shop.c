@@ -34,3 +34,8 @@ int hasStock(Shop* shop1, Appliance* appliance1){
     }
     return 0;
 }
+void shopInfo(Shop* shop1){
+    for (int i = 0; i < shop1->shopCatalogue->amountOfElectrodomestics; ++i) {
+        printf("Appliances: %d %s \n",i,shop1->shopCatalogue->products[i]->model);
+    }
+}

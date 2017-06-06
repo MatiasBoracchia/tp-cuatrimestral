@@ -15,4 +15,5 @@ struct appliance{
 };
 Appliance* createAppliance(char* name, char* model, float price);
 void setPrice(Appliance* electrodomestic , float newPrice);
+void destroyAppliance(Appliance* appliance1);
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_APPLIANCE_H

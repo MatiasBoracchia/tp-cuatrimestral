@@ -16,3 +16,9 @@ Appliance* createAppliance(char* name, char* model, float price){
 
     return appliance1;
 }
+void destroyAppliance(Appliance* appliance1){
+    free(appliance1->name);
+    free(appliance1->model);
+    free(appliance1->tag);
+    free(appliance1);
+}

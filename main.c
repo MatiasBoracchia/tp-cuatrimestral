@@ -33,20 +33,22 @@
 
 int main() {
 
-/*
+
     printf("//----------TP1---------//\n");
     Appliance* appliance1 = createAppliance("Microwave","Samsung hx3",7100.0);
     Appliance* appliance2 = createAppliance("Freezer","Whirlpool",16000);
     Manufacturer* manufacturer1 = createManufacturer("S-R","We worken","Bahia Blanca","Buenos Aires","15-3142-5967","www.s-r.come",appliance1);
     Manufacturer* manufacturer2 = createManufacturer("Manu","We also worken","Junin","Buenos Aires","15-7894-1234","www.elmanu.com",appliance2);
     Provider* provider1 = createProvider("Proveedor47","El mejor por lejos","La Plata","Buenos Aires","15-3178-0039","www.proveedor47.com",200);
+
+    printf("Supplies manufacturer to provider \n");
     supply(manufacturer1,provider1,20);
     supply(manufacturer2,provider1,10);
     supply(manufacturer1,provider1,10);
 
     printf("Quantity of %s %s of Provider is: %d \n",appliance1->name,appliance1->model,checkQuantity(provider1,appliance1));
 
-
+    printf("Supplies provider to shop \n");
     Catalogue* catalogue1 = createCatalogue("1234567","Appliances",15,100);
     Shop* shop1 = createShop(catalogue1,"PPP");
     supplyToShop(provider1,shop1);
@@ -55,13 +57,18 @@ int main() {
     printf("Quantity registered of %s %s of Provider is: %d \n",appliance1->name,appliance1->model,provider1->amountOfElectrodomestics);
     printf("Amount of %s %s of Shopis %d \n",appliance1->name,appliance1->model,checkQuantityInCatalogue(shop1->shopCatalogue,appliance1));
     printf("Amount of Electro in Shop is %d \n",shop1->shopCatalogue->amountOfElectrodomestics);
-    Cart* cart1 = createCart("myCart003",10);
+    Cart* cart1 = createCart(3,10);
     cartInfo(cart1);
-    addToCart(shop1,cart1,appliance1,2);
+    shopInfo(shop1);
+
+    printf("Appliences were added to the cart \n");
+    addToCart(shop1,cart1,appliance1,5);
+    addToCart(shop1,cart1,appliance2,3);
+    printf("Give cart infr \n");
     cartInfo(cart1);
     Invoice* invoice1 = generateInvoice(cart1);
     payInvoice(invoice1); //CORREGIR ESTE METODO
-*/
+
 
 
 
@@ -131,7 +138,7 @@ int main() {
 */
 
 
-
+/*
     printf("//----------TP5---------//\n");
 
     Customer* customer = createCustomer("Hernan","Shu", 47897,10);
@@ -154,7 +161,7 @@ int main() {
     rentMovie(customer,rent1,movie4);
     moviesRented(customer);
     availableMovies(rent1);
-    moviePremieres(rent1);
+    moviePremieres(rent1);*/
 
 //FALTA EL RETURNMOVIE() Y Q HACER CON SURPLUS
 
