@@ -34,6 +34,7 @@ int main() {
 
 
 
+
     printf("//----------TP1---------//\n");
     Appliance* appliance1 = createAppliance("Microwave","Samsung hx3",7100.0);
     Appliance* appliance2 = createAppliance("Freezer","Whirlpool",16000);
@@ -141,6 +142,7 @@ int main() {
 
 
 
+
     printf("//----------TP5---------//\n");
 
     Customer* customer = createCustomer("Hernan","Shu", 47897,10);
@@ -164,13 +166,14 @@ int main() {
     rentInformation(rent1);
 
     rentMovie(customer,rent1,movie2,admin);
+
     rentMovie(customer,rent1,movie4,admin);
 
     moviesRented(customer);
 
-    //availableMovies(rent1);
+    availableMovies(rent1);
 
-    //moviePremieres(rent1);
+    moviePremieres(rent1);
 
 
     returnMovie(customer,rent1,movie2,admin);
