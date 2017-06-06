@@ -33,8 +33,17 @@ Administrator* createAdmin(char* name, char* surname, int id, int maxCustomers){
     admin->maxCustomers = maxCustomers;
     admin->id = id;
     admin->surname = surname;
+    admin->costOfRent = 10;
 
     admin->customers = malloc(sizeof(Customer*)*maxCustomers);
 
     return admin;
+}
+int checkForCustomer(Administrator* admin, Customer* customer){
+    for (int i = 0; i < admin->amountOfCustomers; ++i) {
+        if(admin->customers[i]->surname == customer->surname && admin->customers[i]->name ==customer->name){
+            return 1;
+        }
+    }
+    return 0;
 }

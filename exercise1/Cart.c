@@ -34,6 +34,6 @@ void emptyCart(Cart* cart1){
     cart1->amountOfAppliances = 0;
 }
 Invoice* buyAppliances(Cart* cart1){
-    Invoice* invoice1 = createInvoice(cart1.id,cart1->total);
+    Invoice* invoice1 = createInvoice(cart1->id,cart1->total);
     emptyCart(cart1);
 }

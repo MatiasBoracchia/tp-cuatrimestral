@@ -34,7 +34,7 @@
 int main() {
 
 
-    printf("//----------TP1---------//\n");
+   /* printf("//----------TP1---------//\n");
     Appliance* appliance1 = createAppliance("Microwave","Samsung hx3",7100.0);
     Appliance* appliance2 = createAppliance("Freezer","Whirlpool",16000);
     Manufacturer* manufacturer1 = createManufacturer("S-R","We worken","Bahia Blanca","Buenos Aires","15-3142-5967","www.s-r.come",appliance1);
@@ -64,12 +64,12 @@ int main() {
     printf("Appliences were added to the cart \n");
     addToCart(shop1,cart1,appliance1,5);
     addToCart(shop1,cart1,appliance2,3);
-    printf("Give cart infr \n");
+    printf("Give cart information \n");
     cartInfo(cart1);
 
     emptyCart(cart1);
 
-    Invoice* invoice1 = buyAppliances(cart1);
+    Invoice* invoice1 = buyAppliances(cart1);*/
 
 
 
@@ -139,7 +139,7 @@ int main() {
 */
 
 
-/*
+
     printf("//----------TP5---------//\n");
 
     Customer* customer = createCustomer("Hernan","Shu", 47897,10);
@@ -158,11 +158,13 @@ int main() {
     addMovie(movie4,rent1);
     addMovie(movie5,rent1);
     rentInformation(rent1);
-    rentMovie(customer,rent1,movie2);
-    rentMovie(customer,rent1,movie4);
+    rentMovie(customer,rent1,movie2,admin);
+    rentMovie(customer,rent1,movie4,admin);
     moviesRented(customer);
     availableMovies(rent1);
-    moviePremieres(rent1);*/
+    moviePremieres(rent1);
+    returnMovie(customer,rent1,movie2,admin);
+    rentInformation(rent1);
 
 //FALTA EL RETURNMOVIE() Y Q HACER CON SURPLUS
 

@@ -12,7 +12,10 @@ Rent* createRent(char* name, int maxAmountOfMovies){
 
     return rent1;
 }
-void rentMovie(Customer * customer1, Rent* rent1, Movie* movie){
+void rentMovie(Customer * customer1, Rent* rent1, Movie* movie, Administrator* admin){
+    if(checkForCustomer(admin,customer1)==0){
+        registerCustomer(admin,customer1);
+    }
     for (int i = 0; i < rent1->amountOfMovies; ++i) {
         if(rent1->movies[i]->name == movie->name && rent1->movies[i]->status != "Rented"){
             rent1->movies[i]->status = "Rented";
@@ -53,4 +56,16 @@ int moviePremieres(Rent* rent1){
         }
     }
     return aux;
+}
+void returnMovie(Customer* customer, Rent* rent1,Movie* movie, Administrator* admin){
+    for (int i = 0; i < rent1->amountOfMovies; ++i) {
+        if(rent1->movies[i]->name == movie->name){
+            rent1->movies[i]->status = "Available";
+            admin->totalMoney = admin->totalMoney + admin->costOfRent;
+            printf("%s was returned \n",movie->name);
+            return;
+        }
+    }
+    printf("%s %s didn´t rent %s \n",customer->name,customer->surname,movie->name);
+
 }
