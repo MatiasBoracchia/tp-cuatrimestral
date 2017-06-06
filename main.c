@@ -66,9 +66,10 @@ int main() {
     addToCart(shop1,cart1,appliance2,3);
     printf("Give cart infr \n");
     cartInfo(cart1);
-    Invoice* invoice1 = generateInvoice(cart1);
-    payInvoice(invoice1); //CORREGIR ESTE METODO
 
+    emptyCart(cart1);
+
+    Invoice* invoice1 = buyAppliances(cart1);
 
 
 

@@ -20,6 +20,8 @@ struct cart{
 Invoice* generateInvoice(Cart* cart);
 Cart* createCart(int id, int maxAppliances);
 void cartInfo(Cart* cart1);
+void emptyCart(Cart* cart1);
+Invoice* buyAppliances(Cart* cart1);
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_CART_H
 
 
