@@ -19,7 +19,5 @@ void addMovie(Movie* movie1, Rent* rent1);
 void rentInformation(Rent* rent1);
 int availableMovies(Rent* rent);
 int moviePremieres(Rent* rent1);
-int checkForAvailability();
-char checkNewMovies();
 void returnMovie(Customer* customer, Rent* rent1,Movie* movie, Administrator* admin);
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_RENT_H

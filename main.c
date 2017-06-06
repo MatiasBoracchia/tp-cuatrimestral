@@ -26,15 +26,15 @@
 
 #include "exercise5/Administrator.c"
 #include "exercise5/Customer.c"
-#include "exercise5/License.c"
 #include "exercise5/Rent.c"
-#include "exercise5/Surplus.h"
 #include "exercise5/Movie.c"
 
 int main() {
 
 
-   /* printf("//----------TP1---------//\n");
+
+
+    printf("//----------TP1---------//\n");
     Appliance* appliance1 = createAppliance("Microwave","Samsung hx3",7100.0);
     Appliance* appliance2 = createAppliance("Freezer","Whirlpool",16000);
     Manufacturer* manufacturer1 = createManufacturer("S-R","We worken","Bahia Blanca","Buenos Aires","15-3142-5967","www.s-r.come",appliance1);
@@ -69,7 +69,7 @@ int main() {
 
     emptyCart(cart1);
 
-    Invoice* invoice1 = buyAppliances(cart1);*/
+    Invoice* invoice1 = buyAppliances(cart1);
 
 
 
@@ -77,7 +77,7 @@ int main() {
     //----------TP2---------//
 
 
-/*
+
     printf("//----------TP3---------//\n");
 
 
@@ -116,10 +116,10 @@ int main() {
     deleteMaterial(material3);
     libraryInfo(library1);
 
-*/
 
 
-/*
+
+
 
     printf("//----------TP4---------//\n");
 
@@ -132,11 +132,12 @@ int main() {
     makeReservation(client2,recepcionist,0);
     makeReservation(client2,recepcionist,1);
 
-    Invoice2* invoice1 =payForRoom(client,recepcionist->rooms[0]);
+    Invoice2* invoice =payForRoom(client,recepcionist->rooms[0]);
 
     giveInformation(recepcionist);
 
-*/
+
+
 
 
 
@@ -144,29 +145,39 @@ int main() {
 
     Customer* customer = createCustomer("Hernan","Shu", 47897,10);
     Administrator* admin = createAdmin("Esteban", "Lauri", 12345, 20);
-    registerCustomer(admin,customer);
     Rent* rent1 = createRent("Block Buster",50);
+
+
 
     Movie* movie1 = createMovie("Guardians of the Galaxy 2",2017,1);
     Movie* movie2 = createMovie("Gladiator",2000,0);
     Movie* movie3 = createMovie("Logan",2017,1);
     Movie* movie4 = createMovie("Wonder Women",2017,1);
     Movie* movie5 = createMovie("Thor",2011,0);
+
     addMovie(movie1,rent1);
     addMovie(movie2,rent1);
     addMovie(movie3,rent1);
     addMovie(movie4,rent1);
     addMovie(movie5,rent1);
-    rentInformation(rent1);
-    rentMovie(customer,rent1,movie2,admin);
-    rentMovie(customer,rent1,movie4,admin);
-    moviesRented(customer);
-    availableMovies(rent1);
-    moviePremieres(rent1);
-    returnMovie(customer,rent1,movie2,admin);
+
     rentInformation(rent1);
 
-//FALTA EL RETURNMOVIE() Y Q HACER CON SURPLUS
+    rentMovie(customer,rent1,movie2,admin);
+    rentMovie(customer,rent1,movie4,admin);
+
+    moviesRented(customer);
+
+    //availableMovies(rent1);
+
+    //moviePremieres(rent1);
+
+
+    returnMovie(customer,rent1,movie2,admin);
+
+    rentInformation(rent1);
+    /*
+    */
 
 
 
