@@ -10,6 +10,16 @@
 #include "exercise1/Shop.c"
 #include "exercise1/Cart.c"
 
+#include "exercise2/RegisteredUser.c"
+#include "exercise2/Accessory.c"
+#include "exercise2/Camera.c"
+#include "exercise2/Producer.c"
+#include "exercise2/Product.c"
+#include "exercise2/Sell.c"
+#include "exercise2/SellLine.c"
+#include "exercise2/Supplier.c"
+
+
 #include "exercise3/Library.c"
 #include "exercise3/Person.c"
 #include "exercise3/Loan.c"
@@ -32,7 +42,7 @@
 int main() {
 
 
-
+/*
 
 
     printf("//----------TP1---------//\n");
@@ -71,13 +81,29 @@ int main() {
     emptyCart(cart1);
 
     Invoice* invoice1 = buyAppliances(cart1);
-
-
+    */
 
 
     //----------TP2---------//
+    Product* product1 = createProduct("Nixon g32",1547,1500);
+    Camera* camera1 = createCamera(product1,20,5,20);
+    Producer* producer1 = createProducer(product1,"BH",98763);
+    Supplier* supplier1 = createSupplier("","JM","15-9630-7841","124","Juan","Quilmes","Argentina",50);
+    RegisteredUser* registeredUser1 = createRegisteredUser("Lorenzo",40000001,"Rosario","Argentina");
 
 
+    provideToSupplier(producer1,supplier1,10);
+
+    SellLine* sellLine1 = createSellLine(1587,20);
+    addASellLIne(registeredUser1,sellLine1);
+
+    Sell* sell1 =createSell("15/04/2017",5,product1,0,1596);
+    addToSellLine(sellLine1,sell1);
+
+    infoSellLine(sellLine1);
+
+
+/*
 
     printf("//----------TP3---------//\n");
 
@@ -179,7 +205,7 @@ int main() {
     returnMovie(customer,rent1,movie2,admin);
 
     rentInformation(rent1);
-    /*
+
     */
 
 
