@@ -16,8 +16,10 @@ RegisteredUser* createRegisteredUser(char* name, int DNI, char* location, char* 
 }
 
 float makePurchaseOfSellLine(RegisteredUser* registeredUser1){
-
+    float  f = registeredUser1->aSellLine->totalCost;
+    int i = registeredUser1->aSellLine->id;
+    registeredUser1->aSellLine = createSellLine(i+1,20);
 }
 void addASellLIne(RegisteredUser* registeredUse, SellLine* sellLine1){
-
+    registeredUse->aSellLine = sellLine1;
 }

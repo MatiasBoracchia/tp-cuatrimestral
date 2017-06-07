@@ -94,13 +94,16 @@ int main() {
 
     provideToSupplier(producer1,supplier1,10);
 
-    SellLine* sellLine1 = createSellLine(1587,20);
+    SellLine* sellLine1 = createSellLine(520,20);
     addASellLIne(registeredUser1,sellLine1);
 
-    Sell* sell1 =createSell("15/04/2017",5,product1,0,1596);
+    Sell* sell1 =createSell("15/04/2017",5,product1,5,1596);
+    Sell* sell2 = createSell("17/04/2017",3,product1,10,1307);
     addToSellLine(sellLine1,sell1);
-
+    addToSellLine(sellLine1,sell2);
+    printf("Calculate total cost: %.2f \n", calculateTotalSellLineCost(sellLine1));
     infoSellLine(sellLine1);
+
 
 
 /*

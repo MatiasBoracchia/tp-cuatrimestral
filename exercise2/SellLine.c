@@ -17,7 +17,7 @@ float calculateTotalSellLineCost(SellLine* sellLine1){
     float aux = 0.0;
     for (int i = 0; i < sellLine1->amountOfSells; ++i) {
         float aux2 = sellLine1->sells[i]->quantity * sellLine1->sells[i]->product1->price;
-        float aux3 = aux2 / sellLine1->sells[i]->discount;
+        float aux3 = (aux2 * sellLine1->sells[i]->discount)/100.0;
         aux = aux + (aux2-aux3);
     }
     return aux;
@@ -42,7 +42,7 @@ void deleteSellLine(SellLine* sellLine1, int position){
 }
 void infoSellLine(SellLine* sellLine1){
     printf("Sell Line : %d\n",sellLine1->id);
-    for (int i = 0; i < sellLine1; ++i) {
+    for (int i = 0; i < sellLine1->amountOfSells; ++i) {
         printf("%d Sell: name %s quantity %d \n",i,sellLine1->sells[i]->product1->name,sellLine1->sells[i]->quantity);
     }
 }
