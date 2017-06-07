@@ -3,8 +3,9 @@
 //
 
 #include "Accessory.h"
-Accessory* createAccessory( Product* product,char* type,char* comment){
-    Accessory* accessory1 = malloc(sizeof(Accessory));
+
+Accessory* createAccessory( Product* product,char* type,char* comment) {
+    Accessory *accessory1 = malloc(sizeof(Accessory));
     accessory1->product = malloc(sizeof(Product));
     accessory1->comment = comment;
     accessory1->product = product;

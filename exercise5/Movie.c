@@ -3,8 +3,9 @@
 //
 
 #include "Movie.h"
-Movie* createMovie(char* name, int year, int isNew){
-    Movie* movie1 = malloc(sizeof(Movie*));
+
+Movie* createMovie(char* name, int year, int isNew) {
+    Movie *movie1 = malloc(sizeof(Movie *));
     movie1->name = name;
     movie1->isNew = isNew;
     movie1->year = year;

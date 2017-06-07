@@ -4,10 +4,11 @@
 
 #include "Material.h"
 
-void replaceMaterial(Material* material, Material* newMaterial){
+void replaceMaterial(Material* material, Material* newMaterial) {
     material = newMaterial;
 }
-void deleteMaterial(Material* material){
+
+void deleteMaterial(Material* material) {
     free(material->author);
     free(material->code);
     free(material->status);
@@ -16,8 +17,9 @@ void deleteMaterial(Material* material){
     //free(material->year);
     free(material);
 }
-Material* createMaterial(char* type, char* code, char* author, char* title, char* status, int year){
-    Material* material1 = malloc(sizeof(Material));
+
+Material* createMaterial(char* type, char* code, char* author, char* title, char* status, int year) {
+    Material *material1 = malloc(sizeof(Material));
     material1->type = type;
     material1->code = code;
     material1->author = author;

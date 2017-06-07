@@ -4,8 +4,8 @@
 
 #include "Professor.h"
 
-Professor* createProfessor( int employeeNumber, Person* person){
-    Professor* professor1 = malloc(sizeof(Professor));
+Professor* createProfessor( int employeeNumber, Person* person) {
+    Professor *professor1 = malloc(sizeof(Professor));
     professor1->employeeNumber = employeeNumber;
     professor1->person = malloc(sizeof(Person));
     professor1->person = person;

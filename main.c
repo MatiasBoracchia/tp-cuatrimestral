@@ -41,11 +41,8 @@
 
 int main() {
 
-
-/*
-
-
     printf("//----------TP1---------//\n");
+
     Appliance* appliance1 = createAppliance("Microwave","Samsung hx3",7100.0);
     Appliance* appliance2 = createAppliance("Freezer","Whirlpool",16000);
     Manufacturer* manufacturer1 = createManufacturer("S-R","We worken","Bahia Blanca","Buenos Aires","15-3142-5967","www.s-r.come",appliance1);
@@ -81,16 +78,14 @@ int main() {
     emptyCart(cart1);
 
     Invoice* invoice1 = buyAppliances(cart1);
-    */
 
+    printf("//----------TP1---------//\n");
 
-    //----------TP2---------//
     Product* product1 = createProduct("Nixon g32",1547,1500);
     Camera* camera1 = createCamera(product1,20,5,20);
     Producer* producer1 = createProducer(product1,"BH",98763);
     Supplier* supplier1 = createSupplier("","JM","15-9630-7841","124","Juan","Quilmes","Argentina",50);
     RegisteredUser* registeredUser1 = createRegisteredUser("Lorenzo",40000001,"Rosario","Argentina");
-
 
     provideToSupplier(producer1,supplier1,10);
 
@@ -104,12 +99,7 @@ int main() {
     printf("Calculate total cost: %.2f \n", calculateTotalSellLineCost(sellLine1));
     infoSellLine(sellLine1);
 
-
-
-/*
-
     printf("//----------TP3---------//\n");
-
 
     Material* material1 = createMaterial("Fanatsy","ABCD123","Rowling","Harry Potter 1","Available",1997);
     Material* material2 = createMaterial("Fanatsy","ABCD124","Rowling","Harry Potter 2","Available",1998);
@@ -146,11 +136,6 @@ int main() {
     deleteMaterial(material3);
     libraryInfo(library1);
 
-
-
-
-
-
     printf("//----------TP4---------//\n");
 
     Receptionist* recepcionist = createReceptionist("Juana","Rios",20,444);
@@ -166,19 +151,11 @@ int main() {
 
     giveInformation(recepcionist);
 
-
-
-
-
-
-
     printf("//----------TP5---------//\n");
 
     Customer* customer = createCustomer("Hernan","Shu", 47897,10);
     Administrator* admin = createAdmin("Esteban", "Lauri", 12345, 20);
     Rent* rent1 = createRent("Block Buster",50);
-
-
 
     Movie* movie1 = createMovie("Guardians of the Galaxy 2",2017,1);
     Movie* movie2 = createMovie("Gladiator",2000,0);
@@ -204,15 +181,10 @@ int main() {
 
     moviePremieres(rent1);
 
-
     returnMovie(customer,rent1,movie2,admin);
 
     rentInformation(rent1);
 
-    */
-
-
-
-
     return 0;
+
 }

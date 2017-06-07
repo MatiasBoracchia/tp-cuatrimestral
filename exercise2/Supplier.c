@@ -3,8 +3,9 @@
 //
 
 #include "Supplier.h"
-Supplier* createSupplier(char* CIF, char* name, char* telephone, char* fax, char* responsable, char* location, char* country, int maxAmountOfProducts){
-    Supplier* supplier1 = malloc(sizeof(Supplier));
+
+Supplier* createSupplier(char* CIF, char* name, char* telephone, char* fax, char* responsable, char* location, char* country, int maxAmountOfProducts) {
+    Supplier *supplier1 = malloc(sizeof(Supplier));
     supplier1->CIF = CIF;
     supplier1->name = name;
     supplier1->telephone = telephone;
@@ -14,6 +15,6 @@ Supplier* createSupplier(char* CIF, char* name, char* telephone, char* fax, char
     supplier1->country = country;
     supplier1->maxAmountOfProducts = maxAmountOfProducts;
     supplier1->amountOfProducts = 0;
-    supplier1->products = malloc(sizeof(Product*)* maxAmountOfProducts);
+    supplier1->products = malloc(sizeof(Product *) * maxAmountOfProducts);
     return supplier1;
 }

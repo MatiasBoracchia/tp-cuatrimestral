@@ -4,17 +4,24 @@
 
 #ifndef TP_CUATRIMESTRAL_INDIVIDUAL_SHOP_H
 #define TP_CUATRIMESTRAL_INDIVIDUAL_SHOP_H
+
 #include "Catalogue.h"
 #include <stdlib.h>
+
 typedef struct shop Shop;
-struct shop{
-    char* name;
-    Catalogue* shopCatalogue;
+struct shop {
+    char *name;
+    Catalogue *shopCatalogue;
     float moneyEarned;
     int productsSoled;
 };
+
 Shop* createShop(Catalogue* catalogue1, char* name);
-void addToCart(Shop* shop1, Cart* cart1, Appliance* appliance1,int quantity);
+
+void addToCart(Shop* shop1, Cart* cart1, Appliance* appliance1, int quantity);
+
 int hasStock(Shop* shop1, Appliance* appliance1);
+
 void shopInfo(Shop* shop1);
+
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_SHOP_H

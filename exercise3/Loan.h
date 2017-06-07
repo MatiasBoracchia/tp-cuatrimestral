@@ -6,13 +6,15 @@
 #define TP_CUATRIMESTRAL_INDIVIDUAL_LOAN_H
 
 typedef struct loan Loan;
-struct loan{
+struct loan {
     int code;
-    char* exitDate;
+    char *exitDate;
     double charge;
     int daysKept;
 };
+
 Loan* createLoan(int code, char* exitDate, double charge);
+
 double charge(Loan* loan);
 
 #endif //TP_CUATRIMESTRAL_INDIVIDUAL_LOAN_H

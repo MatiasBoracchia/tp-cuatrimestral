@@ -3,9 +3,10 @@
 //
 
 #include "Camera.h"
-Camera* createCamera(Product* product, int megaPixels,int screenLength,int opticalZoom){
-    Camera* camera1 = malloc(sizeof(Camera));
-    camera1->product =malloc(sizeof(Product));
+
+Camera* createCamera(Product* product, int megaPixels,int screenLength,int opticalZoom) {
+    Camera *camera1 = malloc(sizeof(Camera));
+    camera1->product = malloc(sizeof(Product));
     camera1->product = product;
     camera1->megaPixels = megaPixels;
     camera1->screenLength = screenLength;

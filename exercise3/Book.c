@@ -3,12 +3,12 @@
 //
 
 #include "Book.h"
-Book* createBook(Material* material, char* publisher){
-    Book* book1 = malloc(sizeof(Book));
+
+Book* createBook(Material* material, char* publisher) {
+    Book *book1 = malloc(sizeof(Book));
     book1->material = malloc(sizeof(Material));
     book1->material = material;
     book1->publisher = publisher;
     material->bookOrMagazine = "Magazine";
-
     return book1;
 }
